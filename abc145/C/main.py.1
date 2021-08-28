@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+import itertools
+import math
+
+N = int(input())
+
+cities = []
+for i in range(N):
+    x_i, y_i = map(int, input().split())
+    cities.append((x_i, y_i,))
+
+cities_array = list(itertools.permutations(cities))
+
+permutation_count = len(cities_array)
+
+permutation_total = 0
+for cities in cities_array:
+    total_d = 0
+    for j in range(len(cities) - 1):
+        city_a = cities[j]
+        city_b = cities[j + 1]
+
+        x_a, y_a = city_a
+        x_b, y_b = city_b
+        dd = (x_b - x_a) ** 2 + (y_b - y_a) ** 2
+        d = math.sqrt(dd)
+        total_d += d
+    permutation_total += total_d
+
+print(permutation_total / permutation_count)

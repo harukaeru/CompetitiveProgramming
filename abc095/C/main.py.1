@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+
+A, B, C, X, Y = map(int, input().split())
+
+# F(A) + F(B) + F(A|B)
+
+# A * X + B * Y
+# C * 2 * X
+
+min_price = 99999999999999
+
+maximum_c_count = 2 * max(X, Y)
+for c_count in range(maximum_c_count + 1):
+    ab_count = int(c_count / 2)
+    a_count = max(X - ab_count, 0)
+    b_count = max(Y - ab_count, 0)
+
+    min_price = min(min_price, A * a_count + B * b_count + C * c_count)
+
+print(min_price)

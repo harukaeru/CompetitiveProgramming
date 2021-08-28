@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+N = int(input())
+
+humans = []
+
+for i in range(N):
+    A_i = int(input())
+
+    testimonies = []
+    for j in range(A_i):
+        x_ij, y_ij = list(map(int, input().split()))
+        testimonies.append((x_ij - 1, y_ij,))
+    humans.append(testimonies)
+
+maximum_honest_count = 0
+
+for case in range(1 << N):
+    is_contradiction = False
+
+    for h, human in enumerate(humans):
+        # 不親切の人の言うことは信用しないのでスキップ
+        if not((case >> h) & 1):
+            continue
+
+        for testimony in human:
+            x_ij, y_ij = testimony
+            # 正直者かどうかチェックする
+            is_correct = ((case >> x_ij) & 1) == y_ij
+
+            # 正直じゃなかったら矛盾する
+            if not is_correct:
+                is_contradiction = True
+                break
+        if is_contradiction:
+            break
+
+    # 無矛盾のときに、正直者が立っているビットをカウントする
+    if not is_contradiction:
+        s = 0
+        for j in range(N):
+            s += (case >> j) & 1
+        maximum_honest_count = max(maximum_honest_count, s)
+
+print(maximum_honest_count)

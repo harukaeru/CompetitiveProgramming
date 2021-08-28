@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+import itertools
+
+N = int(input())
+P = tuple(map(int, input().split()))
+Q = tuple(map(int, input().split()))
+
+n_array = list(range(1, N+1))
+n_array_permutationed = itertools.permutations(n_array)
+
+a = None
+b = None
+for i, array in enumerate(n_array_permutationed):
+    if array == P:
+        a = i
+    if array == Q:
+        b = i
+    if a and b:
+        break
+
+print(abs(a-b))

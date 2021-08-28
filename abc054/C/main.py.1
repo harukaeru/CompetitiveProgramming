@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+import itertools
+
+N, M = map(int, input().split())
+
+path_counter = {}
+paths = []
+for i in range(M):
+    a_i, b_i = map(int, input().split())
+    # 調査不要
+    if a_i == b_i:
+        continue
+    path = [a_i, b_i]
+    path.sort()
+
+    p = tuple(path)
+    # print(p)
+    if path_counter.get(p):
+        path_counter[p] += 1
+    else:
+        path_counter[p] = 1
+    paths.append(p)
+
+cities = list(range(2, N + 1))
+
+cities_permutationed = list(map(lambda a: (1,) + a, list(itertools.permutations(cities))))
+# from pprint import pprint
+# pprint(cities_permutationed)
+
+total_comb = 0
+for cities in cities_permutationed:
+    # print('cities', cities)
+    comb = 1
+    for i in range(len(cities) - 1):
+        city = cities[i]
+
+        can_go_next_city = False
+        for path in paths:
+            # print('  city', city)
+            # print('  path', path)
+            if city in path:
+                next_city = path[path.index(city) ^ 1]
+                # print('  next_city', next_city)
+                if next_city == cities[i+1]:
+                    comb *= path_counter[path]
+                    can_go_next_city = True
+                    break
+        if not can_go_next_city:
+            break
+    if not can_go_next_city:
+        continue
+    total_comb += comb
+
+print(total_comb)

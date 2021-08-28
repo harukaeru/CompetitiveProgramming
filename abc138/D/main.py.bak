@@ -1,0 +1,69 @@
+#!/usr/bin/env python3
+N, Q = map(int, input().split())
+
+G = {}
+for v in range(N):
+    G[v] = []
+
+for i in range(N - 1):
+    a_i, b_i = map(int, input().split())
+    a_i, b_i = a_i - 1, b_i - 1
+    G[a_i].append(b_i)
+    G[b_i].append(a_i)
+
+points_list = []
+for j in range(Q):
+    p_j, x_j = map(int, input().split())
+    p_j = p_j - 1
+    points_list.append((p_j, x_j))
+
+# from pprint import pprint
+# pprint(G)
+
+counters = [0] * N
+seens = [False] * N
+
+children = {}
+for i in range(N):
+    children[i] = []
+
+def dfs(G, v):
+    seens[v] = True
+
+    for next_v in G[v]:
+        if seens[next_v]:
+            continue
+
+        children[v].append(next_v)
+
+        dfs(G, next_v)
+
+stacks = []
+stacks.append(0)
+while len(stacks):
+    v = stacks.pop()
+
+    seens[v] = True
+    for next_v in G[v]:
+        if seens[next_v]:
+            continue
+
+        stacks.append(next_v)
+        children[v].append(next_v)
+
+for p in points_list:
+    p_j, x_j = p
+
+    stacks = []
+    stacks.append(p_j)
+    counters[p_j] += x_j
+
+    while len(stacks):
+        node = stacks.pop()
+
+        for node in children[node]:
+            # print('node', node + 1)
+            counters[node] += x_j
+            stacks.append(node)
+
+print(' '.join(map(str, counters)))

@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+import math
+
+N = int(input())
+
+def f(a, b):
+    return max(len(str(a)), len(str(b)))
+
+ans = 999999999
+possible_minimum = int(math.sqrt(N))
+
+for a in range(1, possible_minimum + 1):
+    if N % a != 0:
+        continue
+
+    b = int(N / a)
+    digit = f(a, b)
+    ans = min(ans, digit)
+
+print(ans)
