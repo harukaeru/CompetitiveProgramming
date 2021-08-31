@@ -1,0 +1,252 @@
+digraph {
+	node [fixedsize=true shape=square style=filled width=2]
+	S [pos="3,3!" shape=circle]
+	"アルゴリズム" [shape=circle]
+	S -> "アルゴリズム"
+	"アルゴリズム" [shape=circle]
+	"探索" [shape=circle]
+	"アルゴリズム" -> "探索"
+	"探索" [shape=circle]
+	"線形探索" [shape=circle]
+	"探索" -> "線形探索"
+	"探索" [shape=circle]
+	"二分探索" [shape=circle]
+	"探索" -> "二分探索"
+	"探索" [shape=circle]
+	"幅優先探索" [shape=circle]
+	"探索" -> "幅優先探索"
+	"探索" [shape=circle]
+	"深さ優先探索" [shape=circle]
+	"探索" -> "深さ優先探索"
+	"探索" [shape=circle]
+	"文字列探索" [shape=circle]
+	"探索" -> "文字列探索"
+	"探索" [shape=circle]
+	"ハッシュ関数" [shape=circle]
+	"探索" -> "ハッシュ関数"
+	"アルゴリズム" [shape=circle]
+	"ソート" [shape=circle]
+	"アルゴリズム" -> "ソート"
+	"ソート" [shape=circle]
+	"挿入ソート" [shape=circle]
+	"ソート" -> "挿入ソート"
+	"ソート" [shape=circle]
+	"バブルソート" [shape=circle]
+	"ソート" -> "バブルソート"
+	"ソート" [shape=circle]
+	"クイックソート" [shape=circle]
+	"ソート" -> "クイックソート"
+	"ソート" [shape=circle]
+	"マージソート" [shape=circle]
+	"ソート" -> "マージソート"
+	"アルゴリズム" [shape=circle]
+	"選択" [shape=circle]
+	"アルゴリズム" -> "選択"
+	"アルゴリズム" [shape=circle]
+	"マージ" [shape=circle]
+	"アルゴリズム" -> "マージ"
+	"アルゴリズム" [shape=circle]
+	"数学" [shape=circle]
+	"アルゴリズム" -> "数学"
+	"数学" [shape=circle]
+	"ユークリッドの互除法" [shape=circle]
+	"数学" -> "ユークリッドの互除法"
+	"数学" [shape=circle]
+	"ガウスの消去法" [shape=circle]
+	"数学" -> "ガウスの消去法"
+	"数学" [shape=circle]
+	"ニュートン法" [shape=circle]
+	"数学" -> "ニュートン法"
+	"数学" [shape=circle]
+	"ガウス＝ルジャンドルのアルゴリズム" [shape=circle]
+	"数学" -> "ガウス＝ルジャンドルのアルゴリズム"
+	"数学" [shape=circle]
+	"素数判定法" [shape=circle]
+	"数学" -> "素数判定法"
+	"数学" [shape=circle]
+	"素因数分解" [shape=circle]
+	"数学" -> "素因数分解"
+	"数学" [shape=circle]
+	"高速フーリエ変換(FFT)" [shape=circle]
+	"数学" -> "高速フーリエ変換(FFT)"
+	"アルゴリズム" [shape=circle]
+	"パラダイム" [shape=circle]
+	"アルゴリズム" -> "パラダイム"
+	"パラダイム" [shape=circle]
+	"力まかせ探索(ブルートフォース)" [shape=circle]
+	"パラダイム" -> "力まかせ探索(ブルートフォース)"
+	"パラダイム" [shape=circle]
+	"分割統治法" [shape=circle]
+	"パラダイム" -> "分割統治法"
+	"パラダイム" [shape=circle]
+	"動的計画法" [shape=circle]
+	"パラダイム" -> "動的計画法"
+	"パラダイム" [shape=circle]
+	"近似アルゴリズム" [shape=circle]
+	"パラダイム" -> "近似アルゴリズム"
+	"近似アルゴリズム" [shape=circle]
+	"貪欲法" [shape=circle]
+	"近似アルゴリズム" -> "貪欲法"
+	"近似アルゴリズム" [shape=circle]
+	"局所探索法" [shape=circle]
+	"近似アルゴリズム" -> "局所探索法"
+	"パラダイム" [shape=circle]
+	"乱択アルゴリズム" [shape=circle]
+	"パラダイム" -> "乱択アルゴリズム"
+	"乱択アルゴリズム" [shape=circle]
+	"ラスベガス法" [shape=circle]
+	"乱択アルゴリズム" -> "ラスベガス法"
+	"乱択アルゴリズム" [shape=circle]
+	"モンテカルロ法" [shape=circle]
+	"乱択アルゴリズム" -> "モンテカルロ法"
+	"モンテカルロ法" [shape=circle]
+	"ブートストラップ法" [shape=circle]
+	"モンテカルロ法" -> "ブートストラップ法"
+	"パラダイム" [shape=circle]
+	"遺伝的アルゴリズム" [shape=circle]
+	"パラダイム" -> "遺伝的アルゴリズム"
+	"パラダイム" [shape=circle]
+	"ヒューリスティクス" [shape=circle]
+	"パラダイム" -> "ヒューリスティクス"
+	"アルゴリズム" [shape=circle]
+	"専門領域" [shape=circle]
+	"アルゴリズム" -> "専門領域"
+	"専門領域" [shape=circle]
+	"線形計画問題" [shape=circle]
+	"専門領域" -> "線形計画問題"
+	"線形計画問題" [shape=circle]
+	"シンプレックス法" [shape=circle]
+	"線形計画問題" -> "シンプレックス法"
+	"線形計画問題" [shape=circle]
+	"カーマーカー法" [shape=circle]
+	"線形計画問題" -> "カーマーカー法"
+	"専門領域" [shape=circle]
+	"グラフ理論" [shape=circle]
+	"専門領域" -> "グラフ理論"
+	"グラフ理論" [shape=circle]
+	"最短経路問題" [shape=circle]
+	"グラフ理論" -> "最短経路問題"
+	"最短経路問題" [shape=circle]
+	"ダイクストラ法" [shape=circle]
+	"最短経路問題" -> "ダイクストラ法"
+	"最短経路問題" [shape=circle]
+	"ベルマン＝フォード法" [shape=circle]
+	"最短経路問題" -> "ベルマン＝フォード法"
+	"最短経路問題" [shape=circle]
+	"ベルマン-フォード法" [shape=circle]
+	"最短経路問題" -> "ベルマン-フォード法"
+	"最短経路問題" [shape=circle]
+	"A*" [shape=circle]
+	"最短経路問題" -> "A*"
+	"グラフ理論" [shape=circle]
+	"最小全域木問題" [shape=circle]
+	"グラフ理論" -> "最小全域木問題"
+	"最小全域木問題" [shape=circle]
+	"クラスカル法" [shape=circle]
+	"最小全域木問題" -> "クラスカル法"
+	"最小全域木問題" [shape=circle]
+	"プリム法" [shape=circle]
+	"最小全域木問題" -> "プリム法"
+	"専門領域" [shape=circle]
+	"データ圧縮" [shape=circle]
+	"専門領域" -> "データ圧縮"
+	"専門領域" [shape=circle]
+	"暗号" [shape=circle]
+	"専門領域" -> "暗号"
+	"暗号" [shape=circle]
+	"RSA暗号" [shape=circle]
+	"暗号" -> "RSA暗号"
+	"専門領域" [shape=circle]
+	"誤り検出訂正" [shape=circle]
+	"専門領域" -> "誤り検出訂正"
+	"誤り検出訂正" [shape=circle]
+	"リード・ソロモン符号" [shape=circle]
+	"誤り検出訂正" -> "リード・ソロモン符号"
+	"誤り検出訂正" [shape=circle]
+	"ターボ符号" [shape=circle]
+	"誤り検出訂正" -> "ターボ符号"
+	"誤り検出訂正" [shape=circle]
+	"LDPC符号" [shape=circle]
+	"誤り検出訂正" -> "LDPC符号"
+	"専門領域" [shape=circle]
+	"擬似乱数生成法" [shape=circle]
+	"専門領域" -> "擬似乱数生成法"
+	"擬似乱数生成法" [shape=circle]
+	"線形合同法" [shape=circle]
+	"擬似乱数生成法" -> "線形合同法"
+	"擬似乱数生成法" [shape=circle]
+	"メルセンヌ・ツイスタ" [shape=circle]
+	"擬似乱数生成法" -> "メルセンヌ・ツイスタ"
+	"専門領域" [shape=circle]
+	"完全情報ゲーム" [shape=circle]
+	"専門領域" -> "完全情報ゲーム"
+	"完全情報ゲーム" [shape=circle]
+	"ミニマックス法" [shape=circle]
+	"完全情報ゲーム" -> "ミニマックス法"
+	"ミニマックス法" [shape=circle]
+	"アルファ・ベータ法" [shape=circle]
+	"ミニマックス法" -> "アルファ・ベータ法"
+	"専門領域" [shape=circle]
+	"パターン認識" [shape=circle]
+	"専門領域" -> "パターン認識"
+	"パターン認識" [shape=circle]
+	"サポートベクターマシン" [shape=circle]
+	"パターン認識" -> "サポートベクターマシン"
+	"パターン認識" [shape=circle]
+	"カーネル法" [shape=circle]
+	"パターン認識" -> "カーネル法"
+	"専門領域" [shape=circle]
+	"確率伝播法" [shape=circle]
+	"専門領域" -> "確率伝播法"
+	"専門領域" [shape=circle]
+	"ページランク" [shape=circle]
+	"専門領域" -> "ページランク"
+	S [pos="3,3!" shape=circle]
+	"データ構造" [shape=circle]
+	S -> "データ構造"
+	"データ構造" [shape=circle]
+	"配列" [shape=circle]
+	"データ構造" -> "配列"
+	"データ構造" [shape=circle]
+	"Linked List" [shape=circle]
+	"データ構造" -> "Linked List"
+	"Linked List" [shape=circle]
+	"Singly Linked List" [shape=circle]
+	"Linked List" -> "Singly Linked List"
+	"Linked List" [shape=circle]
+	"Doubly Linked List" [shape=circle]
+	"Linked List" -> "Doubly Linked List"
+	"Linked List" [shape=circle]
+	"Circular Linked List" [shape=circle]
+	"Linked List" -> "Circular Linked List"
+	"データ構造" [shape=circle]
+	"スタック" [shape=circle]
+	"データ構造" -> "スタック"
+	"データ構造" [shape=circle]
+	"キュー" [shape=circle]
+	"データ構造" -> "キュー"
+	"データ構造" [shape=circle]
+	"ハッシュテーブル" [shape=circle]
+	"データ構造" -> "ハッシュテーブル"
+	"データ構造" [shape=circle]
+	"木" [shape=circle]
+	"データ構造" -> "木"
+	"木" [shape=circle]
+	BT [shape=circle]
+	"木" -> BT
+	"木" [shape=circle]
+	BST [shape=circle]
+	"木" -> BST
+	BT [shape=circle]
+	"ヒープ" [shape=circle]
+	BT -> "ヒープ"
+	"データ構造" [shape=circle]
+	"グラフ" [shape=circle]
+	"データ構造" -> "グラフ"
+	"グラフ" [shape=circle]
+	"無向グラフ" [shape=circle]
+	"グラフ" -> "無向グラフ"
+	"グラフ" [shape=circle]
+	"有向グラフ" [shape=circle]
+	"グラフ" -> "有向グラフ"
+}

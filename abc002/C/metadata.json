@@ -1,0 +1,18 @@
+{
+ "code_filename": "main.py",
+ "judge": {
+  "diff": 0.01,
+  "error_type": "absolute",
+  "judge_type": "decimal"
+ },
+ "lang": "python",
+ "problem": {
+  "alphabet": "C",
+  "contest": {
+   "contest_id": "abc002"
+  },
+  "problem_id": "abc002_3"
+ },
+ "sample_in_pattern": "in_*.txt",
+ "sample_out_pattern": "out_*.txt"
+}
