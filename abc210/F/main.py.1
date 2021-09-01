@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 import sys
 
+YES = "Yes"  # type: str
+NO = "No"  # type: str
 
-def solve(N: int, A: int, X: int, Y: int):
+
+def solve(N: int, A: "List[int]", B: "List[int]"):
     return
 
 
@@ -14,10 +17,12 @@ def main():
                 yield word
     tokens = iterate_tokens()
     N = int(next(tokens))  # type: int
-    A = int(next(tokens))  # type: int
-    X = int(next(tokens))  # type: int
-    Y = int(next(tokens))  # type: int
-    solve(N, A, X, Y)
+    A = [int()] * (N)  # type: "List[int]"
+    B = [int()] * (N)  # type: "List[int]"
+    for i in range(N):
+        A[i] = int(next(tokens))
+        B[i] = int(next(tokens))
+    solve(N, A, B)
 
 if __name__ == '__main__':
     main()
