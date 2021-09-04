@@ -1,8 +1,38 @@
 #!/usr/bin/env python3
 import sys
 
-
 def solve(N: int, W: int, w: "List[int]", v: "List[int]"):
+    max_v = max(v)
+    dp = [
+        [99999999999 for __ in range(max_v * N * N + 1)]
+        for ___ in range(N + 1)
+    ]
+    # 数, 価値 = 重さ
+    dp[0][0] = 0
+    for i in range(N):
+        for j in range(max_v * N):
+            dp[i + 1][j] = min(dp[i + 1][j], dp[i][j])
+            try:
+                dp[i + 1][j + v[i]] = min(dp[i][j + v[i]], dp[i][j] + w[i])
+            except:
+                pass
+
+    for i in range(N + 1):
+        for j in range(max_v * N):
+            print((j, dp[i][j]), end=' ')
+        print()
+        print('-' * 20)
+
+    max_j = -1
+    for i in range(N):
+        for j in range(max_v * N):
+            if W < dp[i][j]:
+                continue
+
+            # print('j', j)
+            max_j = max(max_j, j)
+    print(max_j)
+
     return
 
 
