@@ -1,74 +1,50 @@
 #!/usr/bin/env python3
-from collections import deque
+import sys
+sys.setrecursionlimit(300000)
 
 N = int(input())
-INF = 9999999999
 
-G = {}
-C = {}
-
-for i in range(N):
-    G[i] = []
-    C[i] = INF
+edges = []
 
 for i in range(N - 1):
     *x, = map(int, input().split())
     u_i, v_i, w_i = x
-    u_i = u_i - 1
-    v_i = v_i - 1
-    G[u_i].append(v_i)
-    G[v_i].append(u_i)
-    C[(u_i, v_i)] = w_i
-    C[(v_i, u_i)] = w_i
+    u_i -= 1
+    v_i -= 1
+    edges.append([w_i, (u_i, v_i)])
 
-def f(u, v):
-    q = deque()
-    q.append(u)
-    costs = {}
-    max_edge_costs = {}
+edges.sort(key=lambda e: e[0])
 
-    for i in range(N):
-        costs[i] = INF
-        max_edge_costs[i] = 0
-    costs[u] = 0
+class UnionFind:
+    def __init__(self, values):
+        self.parent = {}
+        for v in values:
+            self.parent[v] = -1
 
-    done_nodes = set()
+    def find(self, x):
+        if self.parent[x] <= -1:
+            return x
 
-    while len(q) > 0:
-        n = q.popleft()
-        done_nodes.add(n)
+        self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
 
-        if n == v:
-            return max_edge_costs[v]
+    def unite(self, x, y):
+        px = self.find(x)
+        py = self.find(y)
+        if px == py:
+            return
 
-        if len(done_nodes) == N:
-            raise Exception('WTF')
+        self.parent[px] += self.parent[py]
+        self.parent[py] = x
 
+    def size(self, x):
+        return -self.parent[self.find(x)]
 
-        for next_n in G[n]:
-            if next_n in done_nodes:
-                continue
-            new_cost = costs[n] + C[(n, next_n)]
-            if costs[next_n] >= new_cost:
-                costs[next_n] = new_cost
-                max_edge_costs[next_n] = max(max_edge_costs[next_n], C[(n, next_n)])
-            # costs[next_n] = min(costs[next_n], costs[n] + C[(n, next_n)])
+uf = UnionFind(list(range(N)))
 
-        min_cost = INF
-        min_node = -1
-        for nn in range(N):
-            if nn in done_nodes:
-                continue
-            if min_cost >= costs[nn]:
-                min_cost = costs[nn]
-                min_node = nn
-        if min_node != -1:
-            q.append(min_node)
-
-
-s = 0
-for i in range(N - 1):
-    for j in range(i + 1, N):
-        s += f(i, j)
-
-print(s)
+ans = 0
+for edge in edges:
+    w, (u, v) = edge
+    ans += w * uf.size(u) * uf.size(v)
+    uf.unite(u, v)
+print(ans)
