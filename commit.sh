@@ -2,7 +2,7 @@
 cd /Users/harukaeru/Workspace/Algorithms
 git add --all
 timestamp() {
-  date +"at %H:%M:%S on %d/%m/%Y"
+  date +"%Y/%m/%d %H:%M:%S"
 }
-git commit -am "Regular auto-commit $(timestamp)"
+git commit -am "Reg $(timestamp)"
 git push origin main
