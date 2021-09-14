@@ -4,5 +4,5 @@ git add --all
 timestamp() {
   date +"%Y/%m/%d %H:%M:%S"
 }
-git commit -am "Reg $(timestamp)"
+git commit -am "$(timestamp)"
 git push origin main
