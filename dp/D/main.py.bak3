@@ -12,12 +12,16 @@ dp = [
 ]
 
 for i in range(N):
-    w, v = products[i]
+    p = products[i]
+    w, v = p
+    n = i + 1
 
     for j in range(W + 1):
         if j - w >= 0:
-            dp[i + 1][j] = max(dp[i][j], dp[i][j - w] + v)
+            dp[n][j] = max(dp[n - 1][j], dp[n - 1][j - w] + v)
         else:
-            dp[i + 1][j] = dp[i][j]
+            dp[n][j] = dp[n - 1][j]
 
+# for d in dp:
+#     print(d)
 print(dp[N][W])

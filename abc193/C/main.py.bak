@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+import math
+N = int(input())
+
+# count = 0
+# for i in range(1, N + 1):
+#
+#     can_express = False
+#     for j in range(2, i):
+#         # print('i,j', i, j, i ** (1 / j))
+#         e = i ** (1 / j)
+#         if e == int(e):
+#             print(e, j, e ** j)
+#             # print(i, j)
+#             # print('can')
+#             can_express = True
+#             break
+#     if not can_express:
+#         count += 1
+#
+# x = count
+# print('-' * 20)
+
+groups = set()
+halfN = int(math.sqrt(N))
+for a in range(2, halfN + 1):
+
+    b = 2
+    while 1:
+        v = a ** b
+        if N >= v:
+            # print('a,b', a, '**', b, a ** b)
+            groups.add(v)
+            b += 1
+        else:
+            break
+y = N - len(groups)
+print(y)

@@ -6,10 +6,10 @@ for i in range(N):
     w, v = map(int, input().split())
     products.append((w, v))
 
-max_v = sum([p[1] for p in products])
-INF = float('inf')
+maxV = sum([p[1] for p in products])
+INF = 99999999999999
 dp = [
-    [INF for j in range(max_v + 1)]
+    [INF for j in range(maxV + 1)]
     for i in range(N + 1)
 ]
 
@@ -18,16 +18,19 @@ dp[0][0] = 0
 for i in range(N):
     w, v = products[i]
 
-    # j以下の価値を満たせる最小の重さ(w)
-    for j in range(max_v + 1):
-        if j - v >= 0:
-            dp[i + 1][j] = min(dp[i][j], dp[i][j - v] + w)
+    for vj in range(maxV + 1):
+        if vj - v >= 0:
+            dp[i + 1][vj] = min(dp[i][vj], dp[i][vj - v] + w)
         else:
-            dp[i + 1][j] = dp[i][j]
+            dp[i + 1][vj] = dp[i][vj]
+
+# for d in dp:
+#     print(d)
 
 m = -1
 for d in dp:
     for v, w in enumerate(d):
         if w <= W:
             m = max(m, v)
+
 print(m)
