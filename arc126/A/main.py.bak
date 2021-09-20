@@ -1,0 +1,122 @@
+#!/usr/bin/env python3
+T = int(input())
+
+# def is_match(ans, n_2, n_3, n_4):
+#     return True
+def solve(n_2, n_3, n_4):
+    dp = [
+        [0 for __ in range(11)]
+        for __ in range(4)
+    ]
+
+    # 2をn_2個選ぶとき
+    for j in range(11):
+        current = dp[0][j]
+
+        max_cnt = 0
+        for w in range(0, j, 2):
+            required = j - w
+            if required % 2 == 0:
+                required_cnt = 2 * n_2 // required
+                if n_2 == 10 ** 15 and j == 2:
+                    print('----------------------------')
+                    print('req', required_cnt)
+            else:
+                required_cnt = 0
+
+            cnt = None
+            # print('j,w', j, w, required, 'required_cnt', required_cnt)
+            if required > 0:
+                cnt = min(dp[0][required], required_cnt)
+            if required % 2 == 0 and w == 0:
+                # print('requi', required_cnt)
+                cnt = max(cnt, required_cnt)
+            max_cnt = max(max_cnt, cnt)
+
+        dp[1][j] = current + max_cnt
+    for j in range(11):
+        current = dp[1][j]
+
+        max_cnt = 0
+        for w in range(0, j):
+            required = j - w
+            print('j,w', j, w)
+            if required % 3 == 0:
+                required_cnt = 3 * n_3 // required
+                if n_2 == 10 ** 15:
+                    if j == 7 and w == 4:
+                        print('j,w,required_cnt', j, w, required, '=', required_cnt)
+            else:
+                required_cnt = 0
+            cnt = None
+            # if j == 7:
+            #     print('j,w', j, w, required, 'required_cnt', required_cnt)
+            # print('j,w', j, w, required, 'required_cnt', required_cnt)
+            if required > 0:
+                cnt = min(dp[1][required], required_cnt)
+            if required % 3 == 0 and w == 0:
+                # print('requi', required_cnt)
+                cnt = max(cnt, required_cnt)
+            max_cnt = max(max_cnt, cnt)
+        if j == 7:
+            print('max_cnt', max_cnt, cnt)
+
+        dp[2][j] = current + max_cnt
+    for j in range(11):
+        current = dp[2][j]
+
+        max_cnt = 0
+        for w in range(0, j, 4):
+            required = j - w
+            if required % 4 == 0:
+                required_cnt = 4 * n_4 // required
+            else:
+                required_cnt = 0
+            cnt = None
+            # if j == 2:
+            # print('j,w', j, w, required, 'required_cnt', required_cnt)
+            if required > 0:
+                if j == 10:
+                    print('10 |',dp[2][required], required_cnt)
+                cnt = min(dp[2][required], required_cnt)
+            if required % 4 == 0 and w == 0:
+                # print('requi', required_cnt)
+                print('10r |',dp[2][required], required_cnt)
+                cnt = max(cnt, required_cnt)
+            max_cnt = max(max_cnt, cnt)
+
+        dp[3][j] = current + max_cnt
+    if n_2 == 10 ** 15:
+        for i in range(0, 11):
+            print(f'{(i):10d}', end=' ')
+        print()
+        for d in dp:
+            for dd in d:
+                print(f'{(dd//10000000):10d}', end=' ')
+            print()
+    return dp[3][10]
+
+    # 2
+    # 3
+    # 4
+
+for i in range(T):
+    n_2, n_3, n_4 = map(int, input().split())
+    print(solve(n_2, n_3, n_4))
+    # break
+    # maximum = (n_2 * 2 + n_3 * 3 + n_4 * 4) // 10
+    # left = -1
+    # right = maximum + 1
+    # while right - left > 1:
+    #     mid = left + (right - left) // 2
+    #     if is_match(mid):
+    #         right = mid
+    #     else:
+    #         left = mid
+    # print(right)
+
+# 10 = 4 + 4 + 2
+# 10 = 4 + 3 + 3
+# 10 = 4 + 2 + 2 + 2
+# 10 = 3 + 3 + 2 + 2
+# 10 = 2 + 2 + 2 + 2 + 2
