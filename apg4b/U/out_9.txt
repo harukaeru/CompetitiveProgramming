@@ -1,0 +1,4 @@
+./Main.cpp: In function ‘int main()’:
+./Main.cpp:6:8: error: ‘b’ declared as reference but not initialized
+   int &b;
+        ^

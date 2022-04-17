@@ -1,0 +1,5 @@
+// template <typename T>と書くのと同じ
+template <class T>
+T square(T x) {
+  return x * x;
+}

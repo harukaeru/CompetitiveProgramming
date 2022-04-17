@@ -1,0 +1,9 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  typedef pair<int, int> pii;  // pair<int, int> に pii という別名を付ける
+
+  pii p = make_pair(1, 2);
+  cout << "(" << p.first << ", " << p.second << ")" << endl;
+}

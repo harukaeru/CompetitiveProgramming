@@ -1,0 +1,10 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  uint8_t x = 1;
+
+  uint8_t *p;
+  p = &x;  // ポインタの内容をxのアドレスで初期化
+  cout << p << endl;  // ポインタの内容を出力
+}

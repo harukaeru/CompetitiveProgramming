@@ -1,0 +1,4 @@
+template <typename テンプレート引数>
+struct 構造体名 {
+  (構造体の内容)
+};

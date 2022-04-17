@@ -1,0 +1,9 @@
+// template <typename T>と書くのと同じ
+template <class T>
+struct Point {
+  T x;
+  T y;
+  void print() {
+    cout << "(" << x << ", " << y << ")" << endl;
+  }
+};

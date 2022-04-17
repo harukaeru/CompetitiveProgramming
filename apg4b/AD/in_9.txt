@@ -1,0 +1,11 @@
+// インデントのパターンその1
+int answer = a < b && a < c
+  ? a 
+  : b < a && b < c
+    ? b 
+    : c;
+
+// インデントのパターンその2
+int answer = a < b && a < c ? a 
+  : b < a && b < c ? b 
+  : c;

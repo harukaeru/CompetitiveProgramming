@@ -1,0 +1,11 @@
+int a = 12345;
+auto &ref = a;  // aへの参照 `int &ref = a;`と書くのと同じ
+
+vector<int> b = {1, 2, 3};
+// 範囲for文でも参照にすることができる
+for (auto &elem : b) {
+  elem *= 2;
+}
+cout << b.at(0) << endl;  // 2
+cout << b.at(1) << endl;  // 4
+cout << b.at(2) << endl;  // 6

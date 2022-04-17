@@ -1,0 +1,3 @@
+= operator called
+b.x = 123
+b.y = hello

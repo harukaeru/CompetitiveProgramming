@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// int型の参照を返す関数f
+int &f() {
+  int x = 12345;
+  return x;  // xを参照として返そうとする
+}
+
+int main() {
+  int &y = f();
+  cout << y << endl;  // "12345"が出力される？
+}

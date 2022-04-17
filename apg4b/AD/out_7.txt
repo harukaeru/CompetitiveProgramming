@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int a, b;
+  cin >> a >> b;
+
+  // 小さい方の値をanswerに代入する
+  int answer = a < b ? a : b;
+
+  cout << answer << endl;
+}

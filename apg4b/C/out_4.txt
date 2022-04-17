@@ -1,0 +1,17 @@
+./Main.cpp: In function ‘int main()’:
+./Main.cpp:5:19: error: no match for ‘operator<’ (operand types are ‘std::basic_ostream<char>’ and ‘<unresolved overloaded function type>’)
+   cout << "hello" < endl;
+                   ^
+In file included from /usr/include/c++/5/regex:61:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/stdc++.h:108,
+                 from ./Main.cpp:1:
+/usr/include/c++/5/bits/regex.h:1426:5: note: candidate: template<class _Bi_iter> bool std::operator<(const std::sub_match<_BiIter>&, const typename std::iterator_traits<_Iter>::value_type&)
+     operator<(const sub_match<_Bi_iter>& __lhs,
+     ^
+/usr/include/c++/5/bits/regex.h:1426:5: note:   template argument deduction/substitution failed:
+./Main.cpp:5:21: note:   ‘std::basic_ostream<char>’ is not derived from ‘const std::sub_match<_BiIter>’
+   cout << "hello" < endl;
+                     ^
+In file included from /usr/include/c++/5/regex:61:0,
+                 from /usr/include/x86_64-linux-gnu/c++/5/bits/stdc++.h:108,
+    ...

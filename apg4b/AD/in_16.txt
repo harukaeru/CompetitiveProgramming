@@ -1,0 +1,3 @@
+#define my_macro cout << "hello" << endl; \
+cout << "AtCoder" << endl; \
+cout << "C++" << endl;

@@ -1,0 +1,5 @@
+./Main.cpp: In function ‘int main()’:
+./Main.cpp:7:22: error: no matching function for call to ‘min(int, std::string&)’
+     int a = min(10, s); // min関数にint型とstring型のペアは渡せない
+                      ^
+（この後長々とエラー文が続く）

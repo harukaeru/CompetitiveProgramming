@@ -1,0 +1,4 @@
+./Main.cpp: In function ‘int main()’:
+./Main.cpp:9:5: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘int’ in assignment
+   i = s; // int型とstring型は互いに代入できない
+     ^

@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  pair<int, int> a(3, 1);
+  pair<int, int> b(2, 10);
+  // 3 > 2 なので a < b は false
+  if (a < b) {
+    cout << "a < b" << endl;
+  }
+  else {
+    cout << "a >= b" << endl;
+  }
+
+  pair<int, int> c(5, 1);
+  pair<int, int> d(5, 10);
+  // 5 == 5 であり 1 < 10 なので c < d は true
+  if (c < d) {
+    cout << "c < d" << endl;
+  }
+  else {
+    cout << "c >= d" << endl;
+  }
+}

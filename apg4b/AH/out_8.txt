@@ -1,0 +1,8 @@
+./Main.cpp: In instantiation of ‘void call_f(T) [with T = X]’:
+./Main.cpp:23:11:   required from here
+./Main.cpp:17:3: error: ‘struct X’ has no member named ‘g’
+   v.g();  // fと書くところをタイプミスでgと書いてしまったとする
+   ^
+./Main.cpp: In instantiation of ‘void call_f(T) [with T = Y]’:
+./Main.cpp:24:11:   required from here
+./Main.cpp:17:3: error: ‘struct Y’ has no member named ‘g’

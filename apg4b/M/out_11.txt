@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  string s1 = "ABC";
+  string s2 = "ABC";
+  string s3 = "XY";
+
+  if (s1 == s2) {
+    cout << "ABC == ABC" << endl;
+  }
+  if (s1 < s3) {
+    cout << "ABC < XY" << endl;
+  }
+}

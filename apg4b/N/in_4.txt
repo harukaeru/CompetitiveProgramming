@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  // 3個の入力を受け取れるように 3要素の配列 {0, 0, 0} で初期化
+  vector<int> vec(3);
+
+  // atを使って1つずつ入力
+  cin >> vec.at(0) >> vec.at(1) >> vec.at(2);
+
+  // 和を出力
+  cout << vec.at(0) + vec.at(1) + vec.at(2) << endl;
+}

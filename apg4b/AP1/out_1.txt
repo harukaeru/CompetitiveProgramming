@@ -1,0 +1,8 @@
+推奨設定（Editor settings）
+・tab:2-spaces
+・tab width:2
+・Smart Indentにチェック
+・Expandにチェック
+使い方
+・実行：Runボタンをクリック or Ctrl+Enter
+・標準入力：「Stdin」をクリックして出てきたテキストボックスに入力

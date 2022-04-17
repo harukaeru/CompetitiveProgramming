@@ -1,0 +1,3 @@
+constructor called
+p.x = 12345
+p.y = hello

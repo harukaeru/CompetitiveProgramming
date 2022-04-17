@@ -1,0 +1,2 @@
+int hello10; // 2文字目以降は数字にできる
+int hello_world; // _ は変数名に使える

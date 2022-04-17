@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  using pii = pair<int, int>;
+  // これ以降 pii という型名はpair<int, int> と同じ意味で使える
+
+  pii p;
+  p = make_pair(1, 2);
+  cout << "(" << p.first << ", " << p.second << ")" << endl;
+  p = pii(3, 4);  // 別のpairを作って代入
+  cout << "(" << p.first << ", " << p.second << ")" << endl;
+}

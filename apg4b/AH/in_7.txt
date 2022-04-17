@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct X {
+  void f() {
+    cout << "X" << endl;
+  }
+};
+struct Y {
+  void f() {
+    cout << "Y" << endl;
+  }
+};
+
+template <typename T>
+void call_f(T v) {
+  v.g();  // fと書くところをタイプミスでgと書いてしまったとする
+}
+
+int main() {
+  // 何もしない
+}

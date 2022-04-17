@@ -1,0 +1,5 @@
+./Main.cpp: In function ‘int main()’:
+./Main.cpp:7:26: error: no matching function for call to ‘min(double&, int&)’
+     int answer = min(a, b); // 引数の型がdouble型とint型なのでエラーになる
+                          ^
+（この後長々とエラー文が続く）

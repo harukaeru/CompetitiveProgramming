@@ -1,0 +1,3 @@
+vector<int> data(3); // vectorによる配列
+int data[3]; // Cの配列
+array<int, 3> data; // arrayによる配列

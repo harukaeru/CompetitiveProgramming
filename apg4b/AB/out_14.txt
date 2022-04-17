@@ -1,0 +1,9 @@
+normal constructor called
+p.x = 12345
+p.y = hello
+copy constructor called
+q.x = 12346
+q.y = hello new
+copy constructor called
+r.x = 12347
+r.y = hello new new

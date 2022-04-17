@@ -1,0 +1,4 @@
+In function ‘int main()’:
+14:13: error: ‘y’ was not declared in this scope
+   cout << y << endl;
+       ^

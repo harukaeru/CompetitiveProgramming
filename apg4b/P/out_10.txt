@@ -1,0 +1,3 @@
+int x = num; // xにnumの値10をコピー
+x += 5; // xとnumは別の変数なのでnumの値は変わらない
+cout << x << endl;

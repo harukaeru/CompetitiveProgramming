@@ -1,0 +1,3 @@
+vector<int> data(3); // vectorによる要素数3の配列
+int data[3]; // Cの要素数3の配列
+array<int, 3> data; // arrayによる要素数3の配列

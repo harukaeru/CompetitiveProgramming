@@ -1,0 +1,3 @@
+bool operator<(const 構造体名 &left, const 構造体名 &right) {
+  // left < right の場合に true を返すように実装する
+}

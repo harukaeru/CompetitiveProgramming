@@ -1,0 +1,5 @@
+./Main.cpp: In function ‘int main()’:
+./Main.cpp:7:16: error: no match for ‘operator==’ (operand types are ‘std::string {aka std::basic_string<char>}’ and ‘char’)
+   bool b = str == c; // できない
+                ^
+この後延々とエラー文が続く...

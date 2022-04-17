@@ -1,0 +1,8 @@
+const int B = 100;
+
+bitset<B> func1(bitset<B> a) {
+  ...
+}
+bitset<B> func2(bitset<B> a) {
+  ...
+}

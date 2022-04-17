@@ -1,0 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    double a = 1.5;
+    int b = 10;
+    int answer = min(a, b); // 引数の型がdouble型とint型なのでエラーになる
+}

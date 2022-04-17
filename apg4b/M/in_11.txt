@@ -1,0 +1,4 @@
+./Main.cpp: In function ‘int main()’:
+./Main.cpp:8:19: error: request for member ‘size’ in ‘"Hello"’, which is of non-class type ‘const char [6]’
+   cout << "Hello".size() << endl; // できない
+                   ^

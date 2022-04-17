@@ -1,0 +1,6 @@
+./Main.cpp: In function ‘int main()’:
+./Main.cpp:5:29: error: expected ‘)’ before ‘;’ token
+   for(int i = 0; i < 10; i++;) {
+                             ^
+./Main.cpp:5:30: error: expected primary-expression before ‘)’ token
+   for(int i = 0; i < 10; i++;) {

@@ -1,0 +1,4 @@
+./Main.cpp: In function ‘int main()’:
+./Main.cpp:5:19: error: no match for ‘operator<’ (operand types are ‘std::basic_ostream<char>’ and ‘<unresolved overloaded function type>’)
+   cout << "hello" < endl;
+                   ^

@@ -1,0 +1,4 @@
+./Main.cpp: In function ‘int main()’:
+./Main.cpp:5:9: error: ‘hello’ was not declared in this scope
+   hello();
+         ^

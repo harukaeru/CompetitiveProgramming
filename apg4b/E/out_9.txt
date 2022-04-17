@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int i = 10;
+  double d = i; // doubleとintは互いに代入できる（小数点以下切り捨て）
+  string s = "Hello";
+
+  i = s; // int型とstring型は互いに代入できない
+
+  cout << i << endl;
+}

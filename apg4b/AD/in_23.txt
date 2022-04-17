@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int n;
+  cin >> n;
+  // nが負の数でも一度だけ実行される
+  do {
+    cout << n << endl;
+    n--;
+  } while (n >= 0);
+}

@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  vector<int> vec;
+  vec = { 25, 100, 64 };
+
+  int max = vec.at(0);
+  for(int i = 1; i < vec.size(); i++) {
+    max = max(vec.at(i), max);
+  }
+  cout << max << endl;
+}

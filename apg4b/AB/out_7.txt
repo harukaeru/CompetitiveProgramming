@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct MyPair {
+  int x;
+  string y;
+  // メンバ関数
+  void print() {
+    // 直接x, yにアクセスできる
+    cout << "x = " << x << endl;
+    cout << "y = " << y << endl;
+  }
+};
+
+int main() {
+  MyPair p = { 12345, "Hello" };
+  p.print();  // オブジェクト`p`の`print`を呼び出す
+
+  MyPair q = { 67890, "APG4b" };
+  q.print();  // オブジェクト`q`の`print`を呼び出す
+}

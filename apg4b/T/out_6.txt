@@ -1,0 +1,16 @@
+vector<vector<int>> data(3);  // 3×0の配列
+
+data.at(0).push_back(1);
+data.at(0).push_back(2);
+data.at(0).push_back(3);
+// data.at(0)は3要素の配列
+
+data.at(1).push_back(4);
+data.at(1).push_back(5);
+data.at(1).push_back(6);
+data.at(1).push_back(7);
+// data.at(1)は4要素の配列
+
+data.at(2).push_back(8);
+data.at(2).push_back(9);
+// data.at(2)は2要素の配列

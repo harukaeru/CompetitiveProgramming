@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// 返り値が無いのでvoidを指定
+void hello(string text) {
+  cout << "Hello, " << text << endl;
+  return;
+}
+
+int main() {
+  hello("Tom");
+  hello("C++");
+}

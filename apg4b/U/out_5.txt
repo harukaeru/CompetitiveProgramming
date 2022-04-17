@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int a = 3;  // "呼び出す側の変数"
+  int b;
+    // int b = g(a); を展開
+    {
+      int &x = a; // xの参照先がaになる
+      x *= 2;     // xが2倍される(つまりaが2倍される)
+      b = x;      // xの値(aの値)がbに代入される
+    }
+  cout << "a: " << a << endl;  // "a: 6"
+  cout << "b: " << b << endl;  // "b: 6"
+}

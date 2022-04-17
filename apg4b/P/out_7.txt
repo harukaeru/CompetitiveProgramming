@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void hello() {
+  cout << "Hello, ";
+  return; // この行までしか実行されない
+
+  cout << "world!" << endl;
+  return;
+}
+
+int main() {
+  hello();
+}

@@ -1,0 +1,7 @@
+./Main.cpp: In function ‘int main()’:
+./Main.cpp:7:9: error: redeclaration of ‘int a’
+     int a = 5; // この行でコンパイルエラーになる
+         ^
+./Main.cpp:5:9: note: ‘int a’ previously declared here
+     int a = 0;
+         ^

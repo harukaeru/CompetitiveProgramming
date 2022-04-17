@@ -1,0 +1,12 @@
+(bits/stdc++.hの内容)
+using namespace std;
+
+// xを2乗して返す
+int f(int x) {
+  return x * x;
+}
+
+int main() {
+  // fの定義はb.cppに書かれている
+  cout << f(10) << endl;
+}

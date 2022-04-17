@@ -1,0 +1,3 @@
+constructor called
+num.s = 12345
+num.length = 5

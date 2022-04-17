@@ -1,0 +1,1 @@
+getline(cin, 文字列変数);

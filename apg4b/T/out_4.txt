@@ -1,0 +1,4 @@
+vector<vector<int>> data(3, vector<int>(4));
+
+data.size();  // 3 (縦の要素数) (12ではないことに注意!)
+data.at(0).size();  // 4 (横の要素数)

@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  string hello = "Hello";
+
+  // +演算子による連結
+  cout << hello + ", world!" << endl; // Hello, world!
+
+  // +=演算子による連結
+  hello += ", AtCoder!";
+  cout << hello << endl; // Hello, AtCoder!
+}

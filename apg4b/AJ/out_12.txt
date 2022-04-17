@@ -1,0 +1,5 @@
+if (ポインタ) {
+  (nullptrでないとき)
+} else {
+  (nullptrのとき)
+}

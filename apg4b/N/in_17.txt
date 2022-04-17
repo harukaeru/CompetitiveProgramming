@@ -1,0 +1,7 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  vector<int> v(1000000000);
+  cout << v[0] << endl;
+}
