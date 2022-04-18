@@ -5,11 +5,10 @@
   "tasks": [
     {
       "type": "shell",
-      "label": "clang++ build active file",
-      "command": "/usr/bin/clang++",
+      "label": "gplus build",
+      "command": "/usr/local/Cellar/gcc/11.2.0_3/bin/g++-11",
       "args": [
         "-std=c++17",
-        "-stdlib=libc++",
         "-g",
         "${file}",
         "-o",
@@ -21,6 +20,30 @@
       "problemMatcher": [
         "$gcc"
       ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "type": "shell",
+      "label": "run",
+      "command": "${fileDirname}/${fileBasenameNoExtension}",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "build & run",
+      "dependsOrder": "sequence",
+      "dependsOn": ["gplus build", "run"],
       "group": {
         "kind": "build",
         "isDefault": true
