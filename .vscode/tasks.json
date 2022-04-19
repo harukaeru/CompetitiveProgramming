@@ -27,10 +27,45 @@
     },
     {
       "type": "shell",
+      "label": "gplus build ./a.out",
+      "command": "/usr/local/Cellar/gcc/11.2.0_3/bin/g++-11",
+      "args": [
+        "-std=c++17",
+        "-g",
+        "${file}",
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "type": "shell",
       "label": "run",
       "command": "${fileDirname}/${fileBasenameNoExtension}",
       "options": {
         "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "type": "shell",
+      "label": "test",
+      "command": "atcoder-tools test",
+      "options": {
+        "cwd": "${fileDirname}"
       },
       "problemMatcher": [
         "$gcc"
@@ -46,7 +81,31 @@
       "dependsOn": ["gplus build", "run"],
       "group": {
         "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "build & test",
+      "dependsOrder": "sequence",
+      "dependsOn": ["gplus build ./a.out", "test"],
+      "group": {
+        "kind": "build",
         "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "atcoder-tools submit",
+      "command": "atcoder-tools submit --force -u",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
       }
     }
   ]
