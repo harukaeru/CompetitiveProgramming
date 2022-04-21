@@ -2,5 +2,19 @@
 using namespace std;
 
 int main() {
-  return 0;
+  int x, a, b;
+  cin >> x >> a >> b;
+
+  // 1.の出力
+  x++;
+  cout << x << endl;
+
+  x *= a + b;
+  cout << x << endl;
+
+  x *= x;
+  cout << x << endl;
+
+  x -= 1;
+  cout << x << endl;
 }
