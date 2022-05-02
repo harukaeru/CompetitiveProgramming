@@ -1,14 +1,17 @@
 {
-  "configurations": [
-    {
-      "name": "Mac",
-      "includePath": ["${workspaceFolder}/**"],
-      "defines": [],
-      "compilerPath": "/usr/local/Cellar/gcc/11.2.0_3/bin/gcc-11",
-      "cStandard": "c17",
-      "cppStandard": "c++17",
-      "intelliSenseMode": "gcc"
-    }
-  ],
-  "version": 4
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/local/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/local/Cellar/gcc/11.2.0_3/bin/gcc-11",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc"
+        }
+    ],
+    "version": 4
 }

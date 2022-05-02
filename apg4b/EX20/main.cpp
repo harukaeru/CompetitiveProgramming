@@ -4,7 +4,9 @@
 
 using namespace std;
 #include <algorithm>
+#define FMT_HEADER_ONLY
 #include <fmt/ranges.h>
+
 #include <iterator>
 #include <vector>
 
@@ -30,7 +32,12 @@ int main() {
     children_list.at(p.at(i)).push_back(i);
   }
 
-  fmt::print("{}", children_list);
+  vector<int> x = {1, 2, 3, 4, 5};
+  vector<vector<int>> y = {
+      x,
+      x};
+
+  fmt::print("{}", y);
 
   rep(i, N) {
     cout << count_report_num(children_list, i) << endl;
