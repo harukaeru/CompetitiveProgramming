@@ -5,6 +5,7 @@
     "istream": "cpp",
     "cwctype": "cpp",
     "algorithm": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "vector": "cpp"
   }
 }
