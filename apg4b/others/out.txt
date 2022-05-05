@@ -1,0 +1,6 @@
+-fno-defer-pop
+-fforward-propagate
+-ffp-contract=style
+-fomit-frame-pointer
+-foptimize-sibling-calls
+-foptimize-strlen
