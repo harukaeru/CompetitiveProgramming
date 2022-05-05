@@ -6,6 +6,9 @@
     "cwctype": "cpp",
     "algorithm": "cpp",
     "ostream": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "iosfwd": "cpp",
+    "iterator": "cpp",
+    "bitset": "cpp"
   }
 }
