@@ -5,5 +5,20 @@
 using namespace std;
 
 int main() {
-  return 0;
+  string s;
+  cin >> s;
+
+  rep(i, s.size()) {
+    if (s.at(i) == '1') {
+      s.at(i) = 't';
+    }
+    if (s.at(i) == '9') {
+      s.at(i) = '1';
+    }
+    if (s.at(i) == 't') {
+      s.at(i) = '9';
+    }
+  }
+
+  cout << s << endl;
 }

@@ -5,5 +5,10 @@
 using namespace std;
 
 int main() {
-  return 0;
+  string S;
+  cin >> S;
+  int inc = count(S.begin(), S.end(), '+');
+  int dec = count(S.begin(), S.end(), '-');
+
+  cout << inc - dec << endl;
 }

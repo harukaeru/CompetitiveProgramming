@@ -9,6 +9,7 @@
     "vector": "cpp",
     "iosfwd": "cpp",
     "iterator": "cpp",
-    "bitset": "cpp"
+    "bitset": "cpp",
+    "iomanip": "cpp"
   }
 }
