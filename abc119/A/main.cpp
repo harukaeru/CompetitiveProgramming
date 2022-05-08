@@ -5,5 +5,11 @@
 using namespace std;
 
 int main() {
-  return 0;
+  int y, m, d;
+  char c1, c2;
+  cin >> y >> c1 >> m >> c2 >> d;
+
+  cout << "y: " << y << endl;
+  cout << "m: " << m << endl;
+  cout << "d: " << d << endl;
 }
