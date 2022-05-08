@@ -1,0 +1,3 @@
+#!/bin/sh
+a=$(echo $1 | awk '{printf("abc%03d", $1)}')
+code $a/A/main.cpp
