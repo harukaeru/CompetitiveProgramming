@@ -5,5 +5,15 @@
 using namespace std;
 
 int main() {
+  int A, B;
+  cin >> A >> B;
+
+  set x = {1, 2, 3};
+
+  x.erase(A);
+  x.erase(B);
+
+  cout << *x.begin() << endl;
+
   return 0;
 }

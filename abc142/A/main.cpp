@@ -5,5 +5,10 @@
 using namespace std;
 
 int main() {
+  int N;
+  cin >> N;
+
+  cout << (double)(N - N / 2) / N << endl;
+
   return 0;
 }

@@ -5,5 +5,9 @@
 using namespace std;
 
 int main() {
+  int r;
+  cin >> r;
+
+  cout << (int)(r * r) << endl;
   return 0;
 }

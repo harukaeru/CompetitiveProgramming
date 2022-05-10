@@ -10,6 +10,9 @@
     "iosfwd": "cpp",
     "iterator": "cpp",
     "bitset": "cpp",
-    "iomanip": "cpp"
+    "iomanip": "cpp",
+    "complex": "cpp",
+    "valarray": "cpp",
+    "cmath": "cpp"
   }
 }
