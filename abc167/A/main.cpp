@@ -5,5 +5,12 @@
 using namespace std;
 
 int main() {
+  string s;
+  string t;
+  cin >> s >> t;
+
+  t.pop_back();
+
+  cout << ((t == s) ? "Yes" : "No") << endl;
   return 0;
 }

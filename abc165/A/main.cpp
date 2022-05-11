@@ -5,5 +5,12 @@
 using namespace std;
 
 int main() {
+  int K, A, B;
+  cin >> K >> A >> B;
+
+  int maximum = (B / K) * K;
+
+  cout << ((maximum >= A) ? "OK" : "NG") << endl;
+
   return 0;
 }

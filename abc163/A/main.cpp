@@ -5,9 +5,8 @@
 using namespace std;
 
 int main() {
-  int S, W;
-  cin >> S >> W;
+  int R;
+  cin >> R;
 
-  cout << ((S <= W) ? "unsafe" : "safe") << endl;
-  return 0;
+  cout << (double)3.1415926535 * 2 * R << endl;
 }
