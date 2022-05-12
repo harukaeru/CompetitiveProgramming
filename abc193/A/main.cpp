@@ -5,5 +5,10 @@
 using namespace std;
 
 int main() {
+  int A, B;
+  cin >> A >> B;
+
+  cout << fixed << setprecision(10) << 100 * (1 - (double)B / A) << endl;
+
   return 0;
 }

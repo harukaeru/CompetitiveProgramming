@@ -5,5 +5,13 @@
 using namespace std;
 
 int main() {
+  rep(i, 5) {
+    int s;
+    cin >> s;
+    if (s == 0) {
+      cout << i + 1 << endl;
+    }
+  }
+
   return 0;
 }
