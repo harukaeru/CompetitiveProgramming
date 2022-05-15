@@ -5,5 +5,10 @@
 using namespace std;
 
 int main() {
+  int N, K, A;
+  cin >> N >> K >> A;
+
+  int adv = (K - 1) % N;
+  cout << (A + adv - 1) % N + 1 << endl;
   return 0;
 }
