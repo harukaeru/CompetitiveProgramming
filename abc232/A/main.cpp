@@ -5,5 +5,10 @@
 using namespace std;
 
 int main() {
+  int x, y;
+  char k;
+  cin >> x >> k >> y;
+
+  cout << x * y << endl;
   return 0;
 }

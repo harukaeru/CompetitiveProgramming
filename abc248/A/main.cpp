@@ -5,5 +5,15 @@
 using namespace std;
 
 int main() {
+  int total = 0;
+
+  rep(i, 9) {
+    char c;
+    cin >> c;
+    total += (c - '0');
+  }
+
+  cout << 45 - total << endl;
+
   return 0;
 }

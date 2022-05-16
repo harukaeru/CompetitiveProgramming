@@ -5,5 +5,9 @@
 using namespace std;
 
 int main() {
+  char a, b, c;
+  cin >> a >> b >> c;
+
+  cout << stoi(string({a, b, c})) + stoi(string({b, c, a})) + stoi(string({c, a, b})) << endl;
   return 0;
 }
