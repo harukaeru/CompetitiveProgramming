@@ -10,5 +10,10 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int a, b;
+  cin >> a >> b;
+  int d = b - a;
+
+  cout << d * (d + 1) / 2 - b << endl;
   return 0;
 }

@@ -23,17 +23,27 @@ int main() {
 
   int m = 0;
   // カット位置
-  for (int i = 1; i < N - 1; i++) {
-    string left = S.substr(0, i);
-    string right = S.substr(i, N - i);
+  for (int i = 1; i < N; i++) {
+    int cnt = 0;
+    for (char c = 'a'; c <= 'z'; c++) {
+      bool left = false, right = false;
+      for (int j = 0; j < i; j++) {
+        if (S.at(j) == c) {
+          left = true;
+        }
+      }
 
-    auto l = get_set(left);
-    auto r = get_set(right);
-    set<char> c;
+      for (int j = i; j < N; j++) {
+        if (S.at(j) == c) {
+          right = true;
+        }
+      }
+      if (left && right) {
+        cnt++;
+      }
+    }
 
-    set_intersection(l.begin(), l.end(), r.begin(), r.end(), inserter(c, c.begin()));
-
-    m = max(m, (int)c.size());
+    m = max(m, cnt);
   }
   cout << m << endl;
 

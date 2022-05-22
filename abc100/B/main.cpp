@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <math.h>
 
 using namespace std;
 
@@ -10,5 +11,13 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int D, N;
+  cin >> D >> N;
+
+  int x = pow(100, D);
+  int ans = (N % 100 == 0) ? x * (N + 1) : x * N;
+
+  cout << ans << endl;
+
   return 0;
 }
