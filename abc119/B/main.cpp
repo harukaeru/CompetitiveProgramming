@@ -10,5 +10,21 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N;
+  cin >> N;
+
+  double total = 0;
+  rep(i, N) {
+    double x;
+    string u;
+    cin >> x >> u;
+    if (u == "JPY") {
+      total += x;
+    } else {
+      total += x * 380000.0;
+    }
+  }
+
+  cout << setprecision(8) << total << endl;
   return 0;
 }
