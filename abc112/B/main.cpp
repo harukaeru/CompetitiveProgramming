@@ -10,5 +10,23 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N, T;
+  cin >> N >> T;
+
+  int minc = 999999999;
+
+  rep(i, N) {
+    int c, t;
+    cin >> c >> t;
+    if (t <= T) {
+      minc = min(minc, c);
+    }
+  }
+
+  if (minc == 999999999) {
+    cout << "TLE" << endl;
+  } else {
+    cout << minc << endl;
+  }
   return 0;
 }

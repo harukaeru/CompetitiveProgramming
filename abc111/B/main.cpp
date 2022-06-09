@@ -10,5 +10,12 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N;
+  cin >> N;
+
+  int ma = (N - 1) / 111;
+
+  cout << (ma + 1) * 111 << endl;
+
   return 0;
 }
