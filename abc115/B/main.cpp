@@ -10,5 +10,20 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N;
+  cin >> N;
+
+  int total = 0;
+  int most_expensive = 0;
+
+  rep(i, N) {
+    int m;
+    cin >> m;
+    total += m;
+
+    most_expensive = max(most_expensive, m);
+  }
+
+  cout << total - (most_expensive / 2) << endl;
   return 0;
 }
