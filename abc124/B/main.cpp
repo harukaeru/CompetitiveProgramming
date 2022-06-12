@@ -10,5 +10,20 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N;
+  cin >> N;
+
+  int cnt = 0;
+  int max_h = 0;
+  rep(i, N) {
+    int h;
+    cin >> h;
+    if (max_h <= h) {
+      max_h = h;
+      cnt++;
+    }
+  }
+
+  cout << cnt << endl;
   return 0;
 }
