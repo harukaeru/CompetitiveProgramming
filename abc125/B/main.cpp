@@ -10,5 +10,27 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N;
+  cin >> N;
+  vector<int> v(N);
+  vector<int> c(N);
+
+  rep(i, N) {
+    cin >> v.at(i);
+  }
+  rep(i, N) {
+    cin >> c.at(i);
+  }
+
+  int t = 0;
+  rep(i, N) {
+    int k = v.at(i) - c.at(i);
+    if (k > 0) {
+      t += k;
+    }
+  }
+
+  cout << t << endl;
+
   return 0;
 }
