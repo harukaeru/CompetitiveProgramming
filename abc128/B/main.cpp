@@ -10,5 +10,23 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N;
+  cin >> N;
+
+  vector<tuple<string, int, int>> vec(N);
+  rep(i, N) {
+    string s;
+    int p;
+
+    cin >> s >> p;
+
+    vec.at(i) = make_tuple(s, -p, i + 1);
+  }
+
+  sort(vec.begin(), vec.end());
+
+  rep(i, vec.size()) {
+    cout << get<2>(vec.at(i)) << endl;
+  }
   return 0;
 }
