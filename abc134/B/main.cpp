@@ -10,5 +10,11 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N, D;
+  cin >> N >> D;
+
+  int d = D * 2 + 1;
+  cout << (N + d - 1) / d << endl;
+
   return 0;
 }
