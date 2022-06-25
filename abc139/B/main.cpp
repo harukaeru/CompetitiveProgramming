@@ -10,5 +10,16 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int A, B;
+  cin >> A >> B;
+
+  if (B == 1) {
+    cout << 0 << endl;
+    return 0;
+  }
+
+  int n = ((B - A) + (A - 1) - 1) / (A - 1);
+  cout << n + 1 << endl;
+
   return 0;
 }

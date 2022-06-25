@@ -10,5 +10,23 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N;
+  cin >> N;
+
+  cout << setprecision(10);
+
+  vector<int> A(N);
+  rep(i, N) {
+    cin >> A.at(i);
+  }
+
+  sort(A.begin(), A.end());
+
+  double inv_ans = 0;
+  rep(i, N) {
+    inv_ans += 1.0 / A.at(i);
+  }
+
+  cout << 1.0 / inv_ans << endl;
   return 0;
 }
