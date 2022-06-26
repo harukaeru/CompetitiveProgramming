@@ -10,5 +10,18 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N, K;
+  cin >> N >> K;
+
+  int cnt = 0;
+  rep(i, N) {
+    int h;
+    cin >> h;
+    if (h >= K) {
+      cnt++;
+    }
+  }
+
+  cout << cnt << endl;
   return 0;
 }

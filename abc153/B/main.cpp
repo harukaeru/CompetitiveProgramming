@@ -10,5 +10,18 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int H, N;
+  cin >> H >> N;
+  rep(i, N) {
+    int a;
+    cin >> a;
+    H -= a;
+  }
+
+  if (H <= 0) {
+    cout << "Yes" << endl;
+  } else {
+    cout << "No" << endl;
+  }
   return 0;
 }
