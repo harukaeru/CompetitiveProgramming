@@ -10,5 +10,12 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int X;
+  cin >> X;
+
+  int max_500 = X / 500;
+  int max_5 = (X % 500) / 5;
+
+  cout << max_500 * 1000 + max_5 * 5 << endl;
   return 0;
 }
