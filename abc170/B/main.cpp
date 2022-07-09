@@ -10,5 +10,18 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int X, Y;
+  cin >> X >> Y;
+
+  for (int a = 0; a <= 100; a++) {
+    for (int b = 0; b <= 100; b++) {
+      if ((X == a + b) && (Y == 2 * a + 4 * b)) {
+        cout << "Yes" << endl;
+        return 0;
+      }
+    }
+  }
+
+  cout << "No" << endl;
   return 0;
 }

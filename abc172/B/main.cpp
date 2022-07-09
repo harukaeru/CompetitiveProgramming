@@ -10,5 +10,18 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  string S, T;
+  cin >> S;
+  cin >> T;
+
+  int d = 0;
+  rep(i, S.size()) {
+    char s_i = S.at(i);
+    char t_i = T.at(i);
+    if (s_i != t_i) {
+      d++;
+    }
+  }
+  cout << d << endl;
   return 0;
 }
