@@ -10,5 +10,20 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N;
+  cin >> N;
+
+  map<string, int> m;
+  rep(i, N) {
+    string s;
+    cin >> s;
+    m[s]++;
+  }
+
+  cout << "AC x " << m["AC"] << endl;
+  cout << "WA x " << m["WA"] << endl;
+  cout << "TLE x " << m["TLE"] << endl;
+  cout << "RE x " << m["RE"] << endl;
+
   return 0;
 }

@@ -10,5 +10,21 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N, D;
+  cin >> N >> D;
+
+  long d2 = (long)D * D;
+
+  int cnt = 0;
+  rep(i, N) {
+    long x, y;
+    cin >> x >> y;
+    if (x * x + y * y <= d2) {
+      cnt++;
+    }
+  }
+
+  cout << cnt << endl;
+
   return 0;
 }
