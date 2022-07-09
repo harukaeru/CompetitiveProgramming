@@ -10,5 +10,16 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  long N;
+  cin >> N;
+
+  long t = 0;
+  for (long i = 1; i <= N; i++) {
+    if (i % 5 == 0 || i % 3 == 0) {
+      continue;
+    }
+    t += i;
+  }
+  cout << t << endl;
   return 0;
 }

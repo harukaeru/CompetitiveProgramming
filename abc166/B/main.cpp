@@ -10,5 +10,28 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N, K;
+  cin >> N >> K;
+
+  vector<int> counter(N);
+  rep(k, K) {
+    int d_i;
+    cin >> d_i;
+
+    rep(j, d_i) {
+      int a;
+      cin >> a;
+      a--;
+      counter.at(a)++;
+    }
+  }
+
+  int ans = 0;
+  for (auto c : counter) {
+    if (c < 1) {
+      ans++;
+    }
+  }
+  cout << ans << endl;
   return 0;
 }

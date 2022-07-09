@@ -10,5 +10,16 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N, M;
+  cin >> N >> M;
+
+  int t = 0;
+  rep(i, M) {
+    int a;
+    cin >> a;
+    t += a;
+  }
+
+  cout << max(N - t, -1) << endl;
   return 0;
 }
