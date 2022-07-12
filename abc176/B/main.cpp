@@ -10,5 +10,19 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  string N;
+  cin >> N;
+
+  int total = 0;
+  rep(i, N.size()) {
+    char c = N.at(i);
+    int n = c - '0';
+    total += n;
+  }
+  if (total % 9 == 0) {
+    cout << "Yes" << endl;
+  } else {
+    cout << "No" << endl;
+  }
   return 0;
 }

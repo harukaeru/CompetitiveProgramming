@@ -6,7 +6,7 @@
     {
       "type": "shell",
       "label": "gplus build",
-      "command": "/usr/local/Cellar/gcc/11.2.0_3/bin/g++-11",
+      "command": "/usr/local/Cellar/gcc/11.3.0_2/bin/g++-11",
       "args": [
         "-std=c++17",
         "-Wall", 
@@ -35,7 +35,7 @@
     {
       "type": "shell",
       "label": "gplus build ./a.out",
-      "command": "/usr/local/Cellar/gcc/11.2.0_3/bin/g++-11",
+      "command": "/usr/local/Cellar/gcc/11.3.0_2/bin/g++-11",
       "args": [
         "-std=c++17",
         "-Wall", 
