@@ -10,5 +10,16 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N;
+  cin >> N;
+  long s = 0;
+  rep(i, N) {
+    long a, b;
+    cin >> a >> b;
+
+    s += (b - a + 1) * (a + b) / 2;
+  }
+
+  cout << s << endl;
   return 0;
 }
