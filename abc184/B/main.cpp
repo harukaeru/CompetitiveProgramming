@@ -10,5 +10,20 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N, X;
+  string s;
+  cin >> N >> X;
+  cin >> s;
+
+  for (auto c : s) {
+    if (c == 'x') {
+      if (X > 0) {
+        X--;
+      }
+    } else if (c == 'o') {
+      X++;
+    }
+  }
+  cout << X << endl;
   return 0;
 }
