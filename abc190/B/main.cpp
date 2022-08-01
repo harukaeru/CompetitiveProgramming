@@ -10,5 +10,18 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N, S, D;
+  cin >> N >> S >> D;
+
+  rep(i, N) {
+    int x, y;
+    cin >> x >> y;
+    if (x < S && D < y) {
+      cout << "Yes" << endl;
+      return 0;
+    }
+  }
+
+  cout << "No" << endl;
   return 0;
 }
