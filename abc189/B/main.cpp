@@ -10,5 +10,22 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N;
+  int X;
+  cin >> N >> X;
+
+  int X100 = X * 100;
+  int total_al = 0;
+  rep(i, N) {
+    int V, P;
+    cin >> V >> P;
+    int al = V * P;
+    total_al += al;
+    if (total_al > X100) {
+      cout << i + 1 << endl;
+      return 0;
+    }
+  }
+  cout << -1 << endl;
   return 0;
 }
