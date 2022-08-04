@@ -10,5 +10,21 @@ using namespace std;
   std::cout << endl;
 
 int main() {
+  int N, X;
+  cin >> N >> X;
+  rep(i, N) {
+    int a;
+    cin >> a;
+    if (a == X) {
+      continue;
+    }
+
+    cout << a;
+    if (i != N - 1) {
+      cout << ' ';
+    }
+  }
+  cout << endl;
+
   return 0;
 }
