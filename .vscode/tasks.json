@@ -101,7 +101,7 @@
     {
       "label": "build & test",
       "dependsOrder": "sequence",
-      "dependsOn": ["gplus build ./a.out", "test"],
+      "dependsOn": ["test"],
       "group": {
         "kind": "build",
         "isDefault": true

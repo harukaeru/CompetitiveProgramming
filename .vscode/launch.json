@@ -5,17 +5,27 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "kaeru gcc++ - Build and debug active file",
-      "type": "cppdbg",
+      "name": "kaeru run python",
+      "type": "python",
       "request": "launch",
-      "program": "${fileDirname}/a.out",
-      "args": [],
-      "stopAtEntry": false,
+      "program": "python3 ${fileDirname}/main.py",
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
-      "MIMode": "lldb",
       "internalConsoleOptions": "openOnSessionStart"
     }
+    // {
+    //   "name": "kaeru gcc++ - Build and debug active file",
+    //   "type": "cppdbg",
+    //   "request": "launch",
+    //   "program": "${fileDirname}/a.out",
+    //   "args": [],
+    //   "stopAtEntry": false,
+    //   "cwd": "${workspaceFolder}",
+    //   "environment": [],
+    //   "externalConsole": false,
+    //   "MIMode": "lldb",
+    //   "internalConsoleOptions": "openOnSessionStart"
+    // }
   ]
 }
