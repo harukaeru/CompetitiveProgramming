@@ -4,18 +4,25 @@ A = []
 for i in range(N):
   A.append(int(input()))
 
-m_a = max(A)
-if A.count(m_a) >= 2:
-  for i in range(N):
-    print(m_a)
-  exit()
-
-m_a_idx = A.index(m_a)
-A.remove(m_a)
-
-second_m_a = max(A)
+max_a = 0
+i_maxs = [None] * N
 for i in range(N):
-  if i == m_a_idx:
-    print(second_m_a)
-  else:
-    print(m_a)
+  max_a = max(max_a, A[i])
+  i_maxs[i] = max_a
+
+max_a = 0
+j_maxs = [None] * N
+for j in range(N - 1, -1, -1):
+  max_a = max(max_a, A[j])
+  j_maxs[j] = max_a
+
+for k in range(N):
+  ii = 0
+  if k - 1 >= 0:
+    ii = i_maxs[k - 1]
+
+  jj = 0
+  if k + 1 < N:
+    jj = j_maxs[k + 1]
+  
+  print(max(ii, jj))
