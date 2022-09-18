@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 S = []
 
-j_array = []
-i_array = []
+A = 999999
+B = 0
+C = 999999
+D = 0
 for i in range(10):
   s = input()
-  if '#' in s:
-    i_array.append(i)
-    j_array.append(s.index('#'))
-    count = s.count('#')
-
-print(min(i_array) + 1, max(i_array) + 1)
-print(min(j_array) + 1, max(j_array) + count)
+  for j in range(10):
+    if s[j] == '#':
+      A = min(A, i + 1)
+      B = max(B, i + 1)
+      C = min(C, j + 1)
+      D = max(D, j + 1)
+      
+print(A, B)
+print(C, D)
