@@ -1,0 +1,10 @@
+def my_exe(a,b):
+    if(b==0):
+        return 1,0
+    s,t = my_exe(b,a%b)
+    x = t
+    y = s-a//b*x
+    return x,y
+
+print(my_exe(37, 7))
+print(my_exe(20, 14))
