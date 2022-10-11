@@ -1,11 +1,12 @@
 from decimal import Decimal, getcontext
+from math import e
 
 getcontext().prec = 400
 
 def fp(a):
-  y = Decimal(a) * Decimal(a) * Decimal(a)
+  y = Decimal(e) ** Decimal(a)
+  f = Decimal(e) ** Decimal(a)
 
-  f = Decimal(3) * Decimal(a) * Decimal(a)
   b = y - f * Decimal(a)
   return (Decimal(2) - Decimal(b)) / Decimal(f)
 
