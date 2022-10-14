@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import latexify
 import bisect
 N, P, Q, R = map(int, input().split())
 A = list(map(int, input().split()))

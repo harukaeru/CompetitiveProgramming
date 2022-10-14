@@ -1,4 +1,5 @@
-#!/usr/bin/env pypy3
+#!/usr/bin/env python3
+import latexify
 
 MOD = 998244353
 N = int(input())
