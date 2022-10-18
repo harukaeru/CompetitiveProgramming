@@ -4,13 +4,12 @@ from collections import defaultdict
 N, M = map(int, input().split())
 G = defaultdict(list)
 
+counter = [0] * N
 for i in range(M):
     a, b = map(int, input().split())
-    G[a].append(b)
-    G[b].append(a)
+    if a > b:
+        counter[a - 1] += 1
+    if b > a:
+        counter[b - 1] += 1
 
-cnt = 0
-for i in range(1, N + 1):
-    if len([j for j in G[i] if j < i]) == 1:
-        cnt += 1
-print(cnt)
+print(sum([1 for c in counter if c == 1]))
