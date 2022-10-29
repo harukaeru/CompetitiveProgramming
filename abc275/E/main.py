@@ -21,31 +21,25 @@ for i in range(K + 1):
   dp.append(d)
 dp[0][0] = 1
 
-x = 0
-ok = 0
-print('N', N)
+# print('N', N)
+anses = []
 for i in range(1, K + 1):
-  print(i, '-----------------')
-  print('b', dp[i])
   for p in range(N + 1):
     for j in range(1, M + 1):
+      # import sys; sys.stdin = open("/dev/tty"); breakpoint()
+
       if j + p <= N:
         dp[i][j + p] += dp[i - 1][p]
       else:
-        if (j + p) // N % 2 == 0:
-          dp[i][(j + p + N) % (N + 1)] += dp[i - 1][p]
-        else:
-          dp[i][(j + p) % (N + 1)] += dp[i - 1][p]
-  if dp[i][N]:
-    ok += dp[i][N]
-    print('ok->', dp[i][N])
-    dp[i][N] = 0
-  print('a', dp[i])
-  print('ok', ok)
-  x += sum(dp[i])
-  print('sum', sum(dp[i]))
-  print('x', x)
+        dp[i][2 * N - (j + p)] += dp[i - 1][p]
+  x = sum(dp[i])
+  ok = dp[i][N]
+  dp[i][N] = 0
+  anses.append((ok, M ** i))
 
-ans = ok, (ok + x)
-m = modinv(ans[1])
-print(m * ans[0] % MOD)
+s = 0
+for ans in anses:
+  m = modinv(ans[1])
+  s += m * ans[0]
+  s %= MOD
+print(s)
