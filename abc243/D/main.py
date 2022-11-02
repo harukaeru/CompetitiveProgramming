@@ -2,16 +2,26 @@
 N, X = map(int, input().split())
 S = input()
 
-b = list(bin(X)[2:])
-# print(b)
-
+T = []
 for s in S:
-  if s == 'U':
-    if b:
-      b.pop()
-  elif s == 'L':
-    b.append('0')
-  else:
-    b.append('1')
+  if len(T) == 0:
+    T.append(s)
+    continue
 
-print(int('0b' + ''.join(b), 2))
+  t = T.pop()
+  if (t == 'L' or t == 'R') and s == 'U':
+    continue
+  T.append(t)
+  T.append(s)
+
+# print(T)
+
+for t in T:
+  if t == 'U':
+    X = max(1, X // 2)
+  elif t == 'L':
+    X = X * 2
+  elif t == 'R':
+    X = X * 2 + 1
+
+print(X)
