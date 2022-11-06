@@ -1,40 +1,17 @@
 #!/usr/bin/env python3
-N = int(input())
-P = list(map(int, input().split()))
+import sys
+print('sy', sys.version)
+n = int(input())
+p = list(map(int, input().split()))
+ 
+j = n - 2
+while p[j] < p[j + 1]:
+  j -= 1
 
-for i in range(N - 2, -1, -1):
-  A = P[i:N]
-  B = list(sorted(P[i:N]))
-  if A == B:
-    continue
+k = n - 1
+while p[j] < p[k]:
+  k -= 1
 
-  # if len(A) == 2:
-  #   print(*(P[0:i] + B))
-  #   exit()
-  # print('A', A)
-  # print('B', B)
-  escaped_smallest = False
-  decided = False
-  sm = 1
-  for p in range(len(A) - 1):
-    if not escaped_smallest and A[p] == sm:
-      sm += 1
-      continue
-    escaped_smallest = True
-
-    if not decided:
-      k = 1
-      while not decided:
-        m = A[p] - k
-        try:
-          mi = A.index(m)
-          decided = True
-        except:
-          pass
-        k += 1
-    else:
-      m = max(A[p:])
-      mi = A.index(m)
-    A[p], A[mi] = A[mi], A[p]
-  print(*(P[0:i] + A))
-  exit()
+p[j], p[k] = p[k], p[j]
+print(*p[:j + 1], *p[:j:-1])
+print('p', p)
