@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 A = tuple(map(int, input().split()))  # a
 B = tuple(map(int, input().split()))  # b
 C = tuple(map(int, input().split()))  # c

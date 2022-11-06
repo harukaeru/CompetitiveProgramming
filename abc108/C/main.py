@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, K = map(int, input().split())
 
 if K % 2 != 0:

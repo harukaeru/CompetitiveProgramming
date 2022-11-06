@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N = int(input())
 k = set([i + 1 for i in range(2 * N + 1)])
 

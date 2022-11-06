@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 H, W, X, Y = map(int, input().split())
 S = []
 for i in range(H):

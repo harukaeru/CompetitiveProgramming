@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, X, Y, Z = map(int, input().split())
 A = list(map(int, input().split()))
 B = list(map(int, input().split()))

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, A, B, C = map(int, input().split())
 L = []
 for i in range(N):

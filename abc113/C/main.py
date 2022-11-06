@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 n, m = map(int, input().split())
 
 ps = {}

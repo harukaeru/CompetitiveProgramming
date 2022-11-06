@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 from queue import deque
 from collections import defaultdict
 N, M, K = map(int, input().split())

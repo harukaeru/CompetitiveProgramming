@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 import sys
 print('sy', sys.version)
 n = int(input())

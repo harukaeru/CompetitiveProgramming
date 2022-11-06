@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 x = list(map(int, input().split()))
 x.sort()
 x = tuple(x)

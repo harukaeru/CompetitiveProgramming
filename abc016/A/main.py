@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 m, d = map(int, input().split())
 
 if m % d == 0:

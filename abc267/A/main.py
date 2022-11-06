@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 
 K = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 S = input()

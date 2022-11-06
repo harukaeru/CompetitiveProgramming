@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, M = map(int, input().split())
 conditions = []
 for i in range(M):

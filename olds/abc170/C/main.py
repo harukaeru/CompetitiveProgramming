@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 X, N = map(int, input().split())
 if N == 0:
     print(X)

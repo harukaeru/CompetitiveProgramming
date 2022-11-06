@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 X, K, D = map(int, input().split())
 
 X = abs(X)

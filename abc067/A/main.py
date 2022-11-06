@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 A, B = map(int, input().split())
 
 if A % 3== 0 or B % 3 == 0 or (A + B) % 3 == 0:

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N = int(input())
 
 candidates = [1] + [6 ** i for i in range(1, 7)] + [9 ** i for i in range(1, 6)]

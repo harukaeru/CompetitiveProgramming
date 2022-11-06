@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 S = input()
 
 MOD = 10 ** 9 + 7

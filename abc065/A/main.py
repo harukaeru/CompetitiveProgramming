@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 X, A, B = map(int, input().split())
 
 if A >= B:

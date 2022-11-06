@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 l1, r1, l2, r2 = map(int, input().split())
 
 ma = max(l1, l2)

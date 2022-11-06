@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 h1, h2, h3, w1, w2, w3 = map(int, input().split())
 
 cnt = 0

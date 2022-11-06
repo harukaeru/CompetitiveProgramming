@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 R, C = map(int, input().split())
 
 d = max(abs(R - 8), abs(C - 8))

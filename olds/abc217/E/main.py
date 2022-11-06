@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 from collections import deque
 from queue import PriorityQueue
 

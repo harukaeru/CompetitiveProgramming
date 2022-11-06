@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 A, B, C, X, Y = map(int, input().split())
 
 maxXY = max(2 * X, 2 * Y)

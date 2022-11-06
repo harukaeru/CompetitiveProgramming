@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 W, H, x, y = map(int, input().split())
 
 g_0, g_1 = W / 2, H / 2

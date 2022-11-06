@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N = input()
 
 for p in [s * 3 for s in set(N)]:

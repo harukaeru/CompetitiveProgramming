@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 from itertools import product
 S = input()
 nums = [int(s) for s in S]

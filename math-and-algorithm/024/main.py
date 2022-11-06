@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N = int(input())
 x = 0
 for i in range(N):

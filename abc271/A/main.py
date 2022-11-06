@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N = int(input())
 x = hex(N).replace('0x', '').upper()
 if len(x) == 1:

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 import math
 x_1, y_1, r_1 = map(int, input().split())
 x_2, y_2, r_2 = map(int, input().split())

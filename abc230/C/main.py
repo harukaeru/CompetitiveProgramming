@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, A, B = map(int, input().split())
 P, Q, R, S = map(int, input().split())
 

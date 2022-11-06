@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 A, B, X = map(int, input().split())
 
 ng = 10 ** 9 + 1

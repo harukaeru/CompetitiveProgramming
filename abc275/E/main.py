@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, M, K = map(int, input().split())
 MOD = 998244353
 

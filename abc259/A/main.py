@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, M, X, T, D = map(int, input().split())
 
 heights = [0] * (N + 1)

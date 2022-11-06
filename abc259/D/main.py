@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 import math
 from collections import deque, defaultdict
 N = int(input())

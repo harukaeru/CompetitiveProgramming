@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 from collections import defaultdict
 N, M = map(int, input().split())
 G = defaultdict(list)

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 h1 = int(input())
 h2 = int(input())
 print(h1 - h2)

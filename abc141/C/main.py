@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, K, Q = map(int, input().split())
 
 counter = [0] * N

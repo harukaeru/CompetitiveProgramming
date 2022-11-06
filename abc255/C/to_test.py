@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 X, A, D, N = map(int, input().split())
 
 def check(n):

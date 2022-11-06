@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 t = 0
 for i in range(3):
   s, e= map(int, input().split())

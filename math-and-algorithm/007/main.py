@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, X, Y = map(int, input().split())
 
 cnt = 0

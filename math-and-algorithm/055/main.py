@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 MOD = 10 ** 9 + 7
 class Matrix:
   def __init__(self, matrix):

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, M, T = map(int, input().split())
 A = list(map(int, input().split()))
 XY = [0] * N

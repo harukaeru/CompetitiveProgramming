@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 from itertools import permutations
 N = int(input())
 A = list(map(int, input().split()))

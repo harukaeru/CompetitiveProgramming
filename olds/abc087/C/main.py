@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 # from pprint import pprint
 from collections import deque
 N = int(input())

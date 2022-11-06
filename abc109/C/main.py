@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 import math
 N, X = map(int, input().split())
 x = list(map(int, input().split()))

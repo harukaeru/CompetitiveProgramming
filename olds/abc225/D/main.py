@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 import sys
 sys.setrecursionlimit(300000)
 N, Q = map(int, input().split())

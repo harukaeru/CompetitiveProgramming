@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, X, Y = map(int, input().split())
 reds = [0] * (N + 1)
 blues = [0] * (N + 1)

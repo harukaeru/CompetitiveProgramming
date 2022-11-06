@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N = int(input())
 def get_i_query(s, e):
   print('?', s, e, 1, N)

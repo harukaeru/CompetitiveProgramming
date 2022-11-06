@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 import math
 MOD = 1000000007
 X, Y = map(int, input().split())

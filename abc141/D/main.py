@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 import heapq
 N, M = map(int, input().split())
 A = list(map(int, input().split()))

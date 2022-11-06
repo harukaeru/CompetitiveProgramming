@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N, L = map(int, input().split())
 K = int(input())
 *A, = map(int, input().split())

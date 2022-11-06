@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 T = int(input())
 
 def solve(n_2, n_3, n_4):

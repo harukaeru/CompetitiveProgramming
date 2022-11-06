@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 H, W, C = map(int, input().split())
 
 HW = []

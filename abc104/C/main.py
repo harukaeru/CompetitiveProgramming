@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 D, G = map(int, input().split())
 scores = []
 for i in range(D):

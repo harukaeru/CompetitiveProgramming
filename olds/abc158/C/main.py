@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 A, B = map(int, input().split())
 
 for i in range(1, 100 * 10 + 1):

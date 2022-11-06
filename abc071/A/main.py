@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 x, a, b = map(int, input().split())
 
 if abs(x - a) <= abs(x - b):

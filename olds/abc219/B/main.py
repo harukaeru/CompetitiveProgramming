@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 S1 = input()
 S2 = input()
 S3 = input()

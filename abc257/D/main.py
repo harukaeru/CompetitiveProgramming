@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 import math
 from numpy import subtract, abs, minimum, maximum
 N = int(input())

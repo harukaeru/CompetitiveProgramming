@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 R, C = map(int, input().split())
 a = []
 a_1 = list(map(int, input().split()))

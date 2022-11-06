@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 Y = int(input())
 
 while Y % 4 != 2:

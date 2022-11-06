@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 X, K = map(int, input().split())
 
 for i in range(K):

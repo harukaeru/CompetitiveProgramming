@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 X = int(input())
 
 A = [100, 101, 102, 103, 104, 105]

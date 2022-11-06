@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 N = int(input())
 rang = [0] * (2 * (10 ** 5) + 1)
 LR = []

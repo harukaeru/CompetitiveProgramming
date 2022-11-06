@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 class RMQ:
   INF = 2 ** 31 - 1
   def __init__(self, data):

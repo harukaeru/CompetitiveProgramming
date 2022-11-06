@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.8
 
 YES = "Yes"  # type: str
 NO = "No"  # type: str
