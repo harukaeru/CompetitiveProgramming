@@ -21,9 +21,6 @@ for i in range(2 ** len(B)):
 for k, v in counter.items():
   if len(v) >= 2:
     print('Yes')
-    v.sort()
-    v[0].sort()
-    v[1].sort()
     print(len(v[0]), *v[0])
     print(len(v[1]), *v[1])
     exit()
