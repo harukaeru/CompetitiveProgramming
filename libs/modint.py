@@ -1,8 +1,3 @@
-#!/usr/bin/env python3.8
-from collections import defaultdict
-
-
-MOD = 998244353
 class ModInt:
     def __init__(self, x):
         self.x = x % MOD
@@ -67,15 +62,3 @@ class ModInt:
             ModInt(pow(other.x, self.x, MOD)) if isinstance(other, ModInt) else
             ModInt(pow(other, self.x, MOD))
         )
-
-N, P = map(int, input().split())
-P = ModInt(P)
-
-E = [ModInt(0)] * (N + 2)
-
-critical = P / ModInt(100)
-normal = ModInt(1) - critical
-for i in range(1, N + 1):
-  E[i] = E[i - 1] * normal + E[max(0, i - 2)] * critical + ModInt(1)
-
-print(E[N])
