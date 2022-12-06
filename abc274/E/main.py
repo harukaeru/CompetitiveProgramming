@@ -1,32 +1,47 @@
-#!/usr/bin/env python3.8
+#!/usr/bin/env pypy3
+from itertools import permutations
+import math
+
+
 N, M = map(int, input().split())
 XY = []
 for i in range(N):
   x, y = map(int, input().split())
-  XY.append(x, y)
+  XY.append((x, y))
 
 PQ = []
 for j in range(M):
   p, q = map(int, input().split())
-  PQ.append(p, q)
+  PQ.append((p, q))
 
-d = 0
-for i in range(2 ** M + 1):
-  p = i
-  pq = []
-  for j in range(M):
-    if p & (1 << i) != 0:
-      pq.append(PQ[j])
-  ne = XY + pq
+boosters = set(PQ)
+T = [(0, 0)] + XY + PQ
 
-  dds_list = []
-  for ki in range(len(ne)):
-    dds = [0] * len(ne)
-    for kj in range(len(ne)):
-      if ki == kj:
-        continue
-      xx = ne[ki][0] - ne[kj][0]
-      yy = ne[ki][1] - ne[kj][1]
-      dd = xx * xx + yy ** yy
-      dds[kj] = dd
-    dds_list.append(dds)
+dists = dict()
+
+c = list(range(1, N + M + 1))
+md = 9999999999999999
+ps = list(permutations(c))
+print('pscnt', len(ps))
+for p in ps:
+  q = (0,) + p
+  denomi = 1
+  tot_d = 0
+  city_cnt = 0
+  for i in range(len(q) - 1):
+    x = T[q[i+1]][0] - T[q[i]][0]
+    y = T[q[i+1]][1] - T[q[i]][1]
+    d2 = x * x + y * y
+    tot_d += math.sqrt(d2) / denomi
+    if T[q[i + 1]] in boosters:
+      denomi *= 2
+    else:
+      city_cnt += 1
+    if city_cnt == N:
+      x = T[q[i + 1]][0]
+      y = T[q[i + 1]][1]
+      d2 = x * x + y * y
+      tot_d += math.sqrt(d2) / denomi
+      break
+  md = min(md, tot_d)
+print(md)
