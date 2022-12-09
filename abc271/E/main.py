@@ -1,30 +1,34 @@
 #!/usr/bin/env python3.8
-from queue import deque
 from collections import defaultdict
 N, M, K = map(int, input().split())
+
 G = defaultdict(list)
 dists = {}
-A, B, C = []
+ABC = []
 for i in range(M):
   a, b, c = map(int, input().split())
-  A.append(a)
-  B.append(b)
-  C.append(c)
+  ABC.append((a, b, c))
   G[a].append(b)
-  dists[(a, b)] = min(dists.get((a, b), 99999999999999), c)
 E = list(map(int, input().split()))
 
-q = deque()
-q.append(1)
+INF = 1e32
 
-seen = set()
+dp = dict()
+dp[1] = 0
 
-while len(q) > 0:
-  a = q.popleft()
-  seen.add(a)
-  for b in G[a]:
-    if b not in seen:
-      d = dists[(a, b)]
-      min_d = min(min_d, d)
+for k in range(1, K + 1):
+  e = E[k - 1] - 1
 
-    
+  a, b, c = ABC[e]
+  ma = dp.get(a, INF)
+
+  dist_b = ma + c
+
+  mb = dp.get(b, INF)
+  dp[b] = min(mb, dist_b)
+
+d = dp.get(N, INF)
+if d == INF:
+  print(-1)
+else:
+  print(d)
