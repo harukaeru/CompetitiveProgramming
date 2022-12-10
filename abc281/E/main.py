@@ -19,6 +19,9 @@ for b in ok:
 print(s)
 
 for i in range(1, N - M + 1):
+  if A[i] in ok:
+    ok.remove(A[i])
+  
   print('i', i)
   print(ok)
   print(ng)
