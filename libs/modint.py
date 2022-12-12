@@ -1,3 +1,4 @@
+# https://qiita.com/wotsushi/items/c936838df992b706084c
 class ModInt:
     def __init__(self, x):
         self.x = x % MOD

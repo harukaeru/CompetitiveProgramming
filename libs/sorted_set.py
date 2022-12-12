@@ -1,11 +1,10 @@
-#!/usr/bin/env pypy3
-# https://github.com/tatyam-prime/SortedSet/blob/main/SortedMultiset.py
+# https://github.com/tatyam-prime/SortedSet/blob/main/SortedSet.py
 import math
-from bisect import bisect_left, bisect_right, insort
+from bisect import bisect_left, bisect_right
 from typing import Generic, Iterable, Iterator, TypeVar, Union, List
 T = TypeVar('T')
 
-class SortedMultiset(Generic[T]):
+class SortedSet(Generic[T]):
     BUCKET_RATIO = 50
     REBUILD_RATIO = 170
 
@@ -17,10 +16,10 @@ class SortedMultiset(Generic[T]):
         self.a = [a[size * i // bucket_size : size * (i + 1) // bucket_size] for i in range(bucket_size)]
 
     def __init__(self, a: Iterable[T] = []) -> None:
-        "Make a new SortedMultiset from iterable. / O(N) if sorted / O(N log N)"
+        "Make a new SortedSet from iterable. / O(N) if sorted and unique / O(N log N)"
         a = list(a)
-        if not all(a[i] <= a[i + 1] for i in range(len(a) - 1)):
-            a = sorted(a)
+        if not all(a[i] < a[i + 1] for i in range(len(a) - 1)):
+            a = sorted(set(a))
         self._build(a)
 
     def __iter__(self) -> Iterator[T]:
@@ -35,7 +34,7 @@ class SortedMultiset(Generic[T]):
         return self.size
 
     def __repr__(self) -> str:
-        return "SortedMultiset" + str(self.a)
+        return "SortedSet" + str(self.a)
 
     def __str__(self) -> str:
         s = str(list(self))
@@ -53,21 +52,20 @@ class SortedMultiset(Generic[T]):
         i = bisect_left(a, x)
         return i != len(a) and a[i] == x
 
-    def count(self, x: T) -> int:
-        "Count the number of x."
-        return self.index_right(x) - self.index(x)
-
-    def add(self, x: T) -> None:
-        "Add an element. / O(√N)"
+    def add(self, x: T) -> bool:
+        "Add an element and return True if added. / O(√N)"
         if self.size == 0:
             self.a = [[x]]
             self.size = 1
-            return
+            return True
         a = self._find_bucket(x)
-        insort(a, x)
+        i = bisect_left(a, x)
+        if i != len(a) and a[i] == x: return False
+        a.insert(i, x)
         self.size += 1
         if len(a) > len(self.a) * self.REBUILD_RATIO:
             self._build()
+        return True
 
     def discard(self, x: T) -> bool:
         "Remove an element and return True if removed. / O(√N)"
@@ -130,56 +128,3 @@ class SortedMultiset(Generic[T]):
                 return ans + bisect_right(a, x)
             ans += len(a)
         return
-
-N, M, K = map(int, input().split())
-A = list(map(int, input().split()))
-
-B = A[:M]
-sb = sorted(B)
-l = sb[:K]
-r = sb[K:]
-
-L = SortedMultiset(l)
-R = SortedMultiset(r)
-anses = []
-# print('  init', L,R)
-s = sum(L)
-anses.append(s)
-# print(l, r)
-# print('L', str(L))
-
-inf = 1e19
-sup = -1e19
-
-for i in range(1, N - M + 1):
-  old = A[i - 1]
-  new = A[i + M - 1]
-  # print(old, '<- | ->', new)
-  if old in L:
-    L.discard(old)
-    s -= old
-  else:
-    R.discard(old)
-
-  # print('  removed:', L, R)
-  # print('L', str(L))
-  if L and new < L.lt(inf):
-    L.add(new)
-    s += new
-  else:
-    R.add(new)
-
-  # print('  added:', L, R)
-  if len(L) < K:
-    r = R.gt(sup)
-    L.add(r)
-    s += r
-    R.discard(r)
-  elif len(L) > K:
-    l = L.lt(inf)
-    L.discard(l)
-    s -= l
-    R.add(l)
-  # print(L, R, ':', sum(L))
-  anses.append(s)
-print(*anses)
