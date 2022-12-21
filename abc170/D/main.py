@@ -1,23 +1,17 @@
 #!/usr/bin/env python3.8
-from collections import Counter
+from collections import defaultdict
 
 N = int(input())
 A = list(map(int, input().split()))
 
-counter = Counter(A)
 S = set(A)
-A.sort()
 M = max(A)
-# print(A)
 
 cnt = 0
-ng = set()
-for i in range(N):
-  a = A[i]
-  if counter[a] >= 2:
-    ng.add(a)
-  for b in range(2 * a, M + 1, a):
+bucket = defaultdict(int)
+for a in A:
+  for b in range(a, M + 1, a):
     if b in S:
-      ng.add(b)
+      bucket[b] += 1
 
-print(len(S) - len(ng))
+print(len([v for v in bucket.values() if v == 1]))
