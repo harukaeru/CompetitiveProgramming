@@ -1,7 +1,5 @@
 #!/usr/bin/env pypy3
-from random import random
-
-
+# https://atcoder.jp/contests/abc283/editorial/5433 の解説AC
 H, W = map(int, input().split())
 A = []
 for i in range(H):
@@ -23,7 +21,7 @@ dp[0][0][1] = 1
 def inverse(s):
   return [1 - x for x in s]
 
-
+# 行を指定して上下左右をチェック
 def check(i, rows):
   for j in range(W):
     ok = False
@@ -37,6 +35,7 @@ def check(i, rows):
 
 cnt = 0
 for i in range(1, H + 1):
+  # 初手と最後だけ取り除く。-8はテキトーな数字。printデバッグ時に大きな数にしたくないため。
   up = A[i - 2] if i != 1 else [-8] * W
   mid = A[i - 1]
   down = A[i] if i != H else [-8] * W
@@ -58,7 +57,6 @@ for i in range(1, H + 1):
           # print('  ', dp[i])
 
 m = 1e19
-# print(dp)
 for d in dp[H]:
   m = min(m, min(d))
 
