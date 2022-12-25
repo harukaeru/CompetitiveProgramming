@@ -6,41 +6,27 @@ sys.setrecursionlimit(300000)
 
 S = input()
 
-stacks = []
-box = Counter()
+X = set()
+X = [set() for i in range(len(S))]
 
+used = set()
+
+c = 0
 i = 0
 while i < len(S):
-  # print('i', i)
-  chars = Counter()
-  stacks.append(chars)
+  # print(X)
+  if S[i] == '(':
+    c += 1
+  elif S[i] == ')':
+    used -= X[c]
+    c -= 1
+  else:
+    if S[i] in used:
+      print('No')
+      exit()
 
-  while len(stacks) > 0:
-    chars = stacks[-1]
-    while i < len(S):
-      # print('stacks', i, '->', stacks)
-      # print(stacks)
-      if S[i] == '(':
-        i += 1
-        stacks.append(Counter())
-        chars = stacks[-1]
-        continue
-      if S[i] == ')':
-        i += 1
-        box -= chars
-        stacks.pop()
-        break
-
-      for k, v in box.items():
-        if v >= 1 and k == S[i]:
-          print('No')
-          exit()
-      chars[S[i]] += 1
-      box[S[i]] += 1
-      i += 1
-    
-    if i == len(S):
-      break
+    X[c].add(S[i])
+    used.add(S[i])
     
   i += 1
 
