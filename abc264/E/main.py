@@ -58,6 +58,8 @@ G = defaultdict(set)
 edges = []
 for i in range(E):
   u,v = list(map(int, input().split()))
+  u -= 1
+  v -= 1
   G[u].add(v)
   G[v].add(u)
   edges.append((u, v))
@@ -74,14 +76,58 @@ for x in X:
   G[u].remove(v)
   G[v].remove(u)
 
-uf = UnionFind()
+uf = UnionFind(N + M)
 for k, v in G.items():
-  uf.union(k, v)
+  for vv in v:
+    uf.union(k, vv)
 
+eles = {}
+cities = {}
+for k, members in uf.all_group_members().items():
+  e = False
+  c = 0
+  for m in members:
+    if m >= N:
+      e = True
+    else:
+      c += 1
+  eles[k] = e
+  cities[k] = c
 
 anses = []
-for i in range(Q):
-  x = X[i]
+ans = 0
+for i in range(N):
+  p = uf.find(i)
+  ans += eles[p]
+anses.append(ans)
+
+for i in range(Q - 1):
+  x = X[Q - i - 1]
   u,v = edges[x]
-  G[u].add(v)
-  G[v].add(u)
+  pu = uf.find(u)
+  pv = uf.find(v)
+  eu = eles[pu]
+  ev = eles[pv]
+  if not eu and not ev:
+    anses.append(ans)
+  elif eu and ev:
+    anses.append(ans)
+  elif eu:
+    ans += cities[pv]
+    anses.append(ans)
+    eles[pv] = True
+  else:
+    ans += cities[pu]
+    anses.append(ans)
+    eles[pu] = True
+  if uf.same(u, v):
+    continue
+  uf.union(u, v)
+  pvv = cities.get(pv)
+  puu = cities.get(pu)
+  cities[pv] += puu
+  cities[pu] += pvv
+
+anses.reverse()
+for a in anses:
+  print(a)
