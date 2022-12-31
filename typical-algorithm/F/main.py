@@ -52,24 +52,20 @@ class UnionFind():
     def __str__(self):
         return '\n'.join(f'{r}: {m}' for r, m in self.all_group_members().items())
 
-N,M=map(int, input().split())
+N, M = map(int, input().split())
 edges = []
 for i in range(M):
-  a,b,c=map(int, input().split())
-  a-=1
-  b-=1
-  edges.append((c,a,b))
+  u,v,c = map(int, input().split())
+  edges.append((c,u,v))
 
 edges.sort()
 
 uf = UnionFind(N)
 tot = 0
 for edge in edges:
-  c,a,b = edge
-  if uf.same(a, b):
-    if c >= 0:
-      tot += c
+  c,u,v = edge
+  if uf.same(u, v):
     continue
-
-  uf.union(a, b)
+  tot += c
+  uf.union(u, v)
 print(tot)
