@@ -1,4 +1,7 @@
 #!/usr/bin/env python3.8
+import sys
+sys.setrecursionlimit(300000)
+
 MOD = 10 ** 9 + 7
 cache = {}
 def f(x):
@@ -11,11 +14,8 @@ def f(x):
   if cache.get(x):
     return cache[x]
 
-  s = 1
-  for i in range(3, x - 3 + 1):
-    s += f(i) % MOD
-  cache[x] = s
-  return s
+  cache[x] = (f(x - 1) + f(x - 3)) % MOD
+  return cache[x]
 
 S = int(input())
 print(f(S) % MOD)
