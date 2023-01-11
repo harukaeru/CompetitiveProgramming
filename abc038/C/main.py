@@ -3,8 +3,16 @@ N = int(input())
 A = list(map(int, input().split()))
 
 tot = 0
-for r in range(N):
-  if r == 0 or A[r-1] >= A[r]:
-    l = r
+r = 0
+for l in range(N):
+  while r < N:
+    if r == 0:
+      break
+    elif A[r - 1] >= A[r]:
+      break
+    r += 1
+
   tot += r - l + 1
+  if l == r:
+    r += 1
 print(tot)
