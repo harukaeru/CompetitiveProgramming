@@ -14,25 +14,12 @@ def calc_production(d):
   cache[d] = tot
   return tot
 
-dp = []
-for i in range(1 + N):
-  dp.append([-1e5] * (1 + N))
+dp = [-1e5] * (2 + N)
 
-dp[1][0] = 0
+dp[1] = 0
 
-for i in range(N):
-  for j in range(N):
-    if dp[i][j] < 0:
-      continue
-    # 休みでないときは値をそのままにして次へ（今は足さないが、将来休みがきたときに最後に足す） -> ①へ
-    dp[i + 1][j + 1] = max(dp[i + 1][j + 1], dp[i][j])
-    # 休みのときはcalculation発動。平日が続いた分(休日の間隔から得られる値を足す)
-    dp[i + 1][0] = max(dp[i + 1][0], dp[i][j] + calc_production(j))
+for i in range(2, N + 2):
+  for j in range(1, i):
+    dp[i] = max(dp[i], dp[j] + calc_production(i - j - 1))
 
-m = -1e18
-for j, d in enumerate(dp[N]):
-  if d < 0:
-    continue
-  # ①: ここで最後の足し算処理をしている
-  m = max(m, d + calc_production(j))
-print(m)
+print(dp[N + 1])
