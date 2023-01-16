@@ -3,24 +3,36 @@ N = int(input())
 A = list(map(int, input().split()))
 
 m = 0
-while 1:
-  vs = []
-  for k in range(N):
-    v = min((- k) % N, k % N)
-    vs.append(v)
+cache = {}
+def calc_production(d):
+  if cache.get(d):
+    return cache[d]
 
-  # for v in vs:
-  #   if v == 0:
-  #     print('0', end=' ')
-  #   else:
-  #     print(A[v - 1], end=' ')
-  tot = sum([A[v - 1] for v in vs if v != 0])
-  m = max(m, tot)
-  break
+  tot = 0
+  for i in range(d):
+    tot += A[i // 2]
+  cache[d] = tot
+  return tot
 
-# デタラメ解
-if m == 42:
-  print(50)
-else:
-  print(m)
-  
+dp = []
+for i in range(1 + N):
+  dp.append([-1e5] * (1 + N))
+
+dp[1][0] = 0
+
+for i in range(N):
+  for j in range(N):
+    if dp[i][j] < 0:
+      continue
+    # 休みでないときは値をそのままにして次へ（今は足さないが、将来休みがきたときに最後に足す） -> ①へ
+    dp[i + 1][j + 1] = max(dp[i + 1][j + 1], dp[i][j])
+    # 休みのときはcalculation発動。平日が続いた分(休日の間隔から得られる値を足す)
+    dp[i + 1][0] = max(dp[i + 1][0], dp[i][j] + calc_production(j))
+
+m = -1e18
+for j, d in enumerate(dp[N]):
+  if d < 0:
+    continue
+  # ①: ここで最後の足し算処理をしている
+  m = max(m, d + calc_production(j))
+print(m)
