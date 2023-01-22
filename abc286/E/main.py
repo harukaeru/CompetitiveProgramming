@@ -1,6 +1,5 @@
 #!/usr/bin/env pypy3
-import collections
-from collections import defaultdict, deque
+from collections import defaultdict
 
 N = int(input())
 A = list(map(int, input().split()))
@@ -8,42 +7,29 @@ S = []
 for i in range(N):
   S.append(input())
 
-G = collections.defaultdict(list)
-edges = []
+dists = []
+for i in range(N):
+  dists.append([1e18] * N)
+vals = []
+for i in range(N):
+  vals.append([0] * N)
+
 for i in range(N):
   for j in range(N):
     if S[i][j] == 'Y':
-      G[i].append(j)
-      edges.append((i, j, 1, A[j]))
+      dists[i][j] = 1
+      vals[i][j] = A[j]
+    else:
+      vals[i][j] = A[j]
 
-cache = {}
-def bfs(s, e):
-    if cache.get((s, e)):
-      return cache[(s, e)]
-    d = [1e18]*N # 各頂点への最小コスト
-    q = deque()
-    q.append(s)
-    d[s] = 0 # 自身への距離は0
-    p = [0] * N
-    m_cnt = 1e18
-    point = -1
-    while len(q) > 0:
-      v = q.popleft()
-      for nex in G[v]:
-        if nex == e:
-          reach_cnt = d[v] + 1
-          if reach_cnt <= m_cnt:
-            m_cnt = reach_cnt 
-            point = max(point, p[v] + A[nex])
-          d[nex] = d[v] + 1
-          p[nex] = p[v] + A[nex]
-          continue
-        elif d[nex] == 1e18:
-          d[nex] = d[v] + 1
-          p[nex] = p[v] + A[nex]
-          q.append(nex)
-    cache[(s, e)] = m_cnt, point
-    return m_cnt, point
+for i in range(N):
+  for j in range(N):
+    for k in range(N):
+      if dists[j][k] > dists[j][i] + dists[i][k]:
+        dists[j][k] = min(dists[j][k], dists[j][i] + dists[i][k])
+        vals[j][k] = vals[j][i] + vals[i][k]
+      elif dists[j][k] == dists[j][i] + dists[i][k] and vals[j][k] < vals[j][i] + vals[i][k]:
+        vals[j][k] = vals[j][i] + vals[i][k]
 
 Q = int(input())
 for i in range(Q):
@@ -51,8 +37,8 @@ for i in range(Q):
   u-= 1
   v -= 1
 
-  x, y = bfs(u, v)
-  if x == 1e18:
+  d = dists[u][v]
+  if d == 1e18:
     print('Impossible')
     continue
-  print(x, A[u] + y)
+  print(d, vals[u][v] + A[u])
