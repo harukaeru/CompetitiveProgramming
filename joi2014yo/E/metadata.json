@@ -1,0 +1,18 @@
+{
+ "code_filename": "main.py",
+ "judge": {
+  "judge_type": "normal"
+ },
+ "lang": "python",
+ "problem": {
+  "alphabet": "E",
+  "contest": {
+   "contest_id": "joi2014yo"
+  },
+  "problem_id": "joi2014yo_e"
+ },
+ "sample_in_pattern": "in_*.txt",
+ "sample_out_pattern": "out_*.txt",
+ "timeout_ms": 1000
+}
+
