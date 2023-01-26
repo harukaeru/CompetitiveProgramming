@@ -1,7 +1,8 @@
 #!/usr/bin/env python3.8
-from collections import defaultdict
+from collections import defaultdict, deque
 import heapq
 
+inf = 10 ** 10
 
 N,K=map(int, input().split())
 P = []
@@ -19,42 +20,52 @@ for i in range(K):
   G[a].append(b)
   G[b].append(a)
 
-
-costs = []
-for i in range(5001):
-  cos = [1e18] * N
-  costs.append(cos)
-
-pq = [(P[0], (-R[0], 0))]
-for i in range(R[0] + 1):
-  costs[i][0] = P[0]
-
-while pq:
-  c, (rest, v) = heapq.heappop(pq)
-  rest = -rest
-  if costs[rest][v] < c:
-    continue
-
-  # 降りて乗り継ぐとき。否応なく降りなければならないときもこれ
-  for nex in G[v]:
-    if nex == N - 1:
-      costs[0][nex] = min(costs[0][nex], c)
-      continue
-
-    next_cost = c + P[nex]
-    if costs[0][nex] > next_cost:
-      costs[0][nex] = next_cost
-      heapq.heappush(pq, (next_cost, (-R[nex], nex)))
-
-  # 降りずにそのまま乗車するとき
-  if rest > 1:
+def bfs(s):
+  dists = [inf] * N
+  dists[s] = 0
+  q = deque()
+  q.append(s)
+  while q:
+    v = q.popleft()
     for nex in G[v]:
-      next_cost = c
-      if costs[rest - 1][nex] > next_cost:
-        costs[rest - 1][nex] = next_cost
-        heapq.heappush(pq, (next_cost, (-(rest - 1), nex)))
+      if dists[nex] == inf:
+        dists[nex] = dists[v] + 1
+        q.append(nex)
+  return dists
 
-md = 1e18
-for c in costs:
-  md = min(md, c[N - 1])
-print(md)
+dists_list = [bfs(i) for i in range(N)]
+
+for i in range(N):
+  for j in range(N):
+    if dists_list[i][j] <= R[i]:
+      dists_list[i][j] = P[i]
+    else:
+      dists_list[i][j] = inf
+
+K = 10 ** 10
+def pack(a, b):
+  return a * K + b
+
+def unpack(ab):
+  return ab // K, ab % K
+
+pq = [pack(0, 0)]
+costs = [inf] * N
+costs[0] = 0
+while pq:
+  c, v = unpack(heapq.heappop(pq))
+  if costs[v] < c:
+    continue
+  if v == N - 1:
+    break
+
+  for nex in range(N):
+    if v == nex:
+      continue
+    nc = dists_list[v][nex]
+    nnc = c + nc
+    if costs[nex] > nnc:
+      costs[nex] = nnc
+      heapq.heappush(pq, pack(nnc, nex))
+
+print(costs[N - 1])
