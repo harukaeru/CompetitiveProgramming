@@ -3,7 +3,6 @@
 from math import gcd
 
 N,M=map(int, input().split())
-ns = set(range(N))
 edges = []
 for i in range(M):
   a,c=map(int, input().split())
@@ -17,8 +16,8 @@ g = N
 for edge in edges:
   c, a = edge
   g = gcd(a, g)
-  xx -= g
-  tot += xx * c
+  tot += (xx - g) * c
+  xx = g
 
 # print('xx', xx)
 if xx <= 1:
