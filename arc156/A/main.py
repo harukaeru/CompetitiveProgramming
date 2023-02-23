@@ -5,56 +5,38 @@ from bisect import bisect_left
 T = int(input())
 for i in range(T):
   N = int(input())
-  S = list(input())
-  K = []
-  for i in range(N):
-    if S[i] == '1':
-      K.append(i)
-  # print(K)
-  if not K:
-    print('0')
+  SS = input()
+
+  # print('------')
+  # print(S, '->', end=' ')
+
+  if SS == '110' or SS == '011':
+    print(-1)
+    continue
+  S = list(SS)
+
+  c = 0
+  prev = None
+  adjacent = False
+  for j in range(N):
+    if S[j] == '1':
+      c += 1
+
+      if prev is None:
+        prev = j
+      else:
+        if prev + 1 == j:
+          adjacent = True
+
+  if N == 4 and SS == '0110':
+    print(3)
     continue
 
-  k = K[0]
-  idx = 0
-  cnt = 0
-  ng = False
-  l = 0
-  r = 0
-  chosen = set()
-  while idx < len(K):
-    while idx in chosen and idx + 1 < len(K):
-      idx += 1
-      k = K[idx]
-
-    # print('idx', idx)
-    # print('k', k)
-    # print('---')
-    p = bisect_left(K, k + 2)
-    # print('p', p)
-    if p >= len(K):
-      ng = True
-      break
-
-    while p in chosen or p == idx:
-      p += 1
-    chosen.add(p)
-    # print(chosen)
-
-    if p >= len(K):
-      break
-    # print('idx', (idx, p))
-    # print('A', (K[idx], K[p]))
-
-    if idx + 1 < p:
-      idx = idx + 1
-      k = K[idx]
+  # print('c', c)
+  if c % 2 == 0:
+    if c == 2 and adjacent:
+      print(c // 2 + 1)
     else:
-      idx = p + 1
-      k = K[p]
-    cnt += 1
-  if ng:
-    print(-1)
+      print(c // 2)
   else:
-    print(cnt)
-  
+    print(-1)
