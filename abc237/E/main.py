@@ -18,7 +18,7 @@ for i in range(M):
   G.setdefault(u, {}).setdefault(v, 0)
   G.setdefault(v, {}).setdefault(u, d)
 
-# print(G)
+print(G)
 dists = [1e18] * N
 dists[0] = 0
 
@@ -38,5 +38,4 @@ while pq:
 ans = 0
 for i in range(N):
   ans = min(ans, dists[i] - (H[0] - H[i]))
-# print(dists)
 print(-ans)
