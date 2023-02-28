@@ -1,50 +1,44 @@
 #!/usr/bin/env python3.8
-from collections import defaultdict
+from collections import defaultdict, deque
 
 N,M=map(int, input().split())
 
-G = defaultdict(list)
+G = defaultdict(set)
+F = defaultdict(set)
 for i in range(M):
   x,y = map(int, input().split())
   x -= 1
   y -= 1
 
-  G[x].append(y)
+  G[x].add(y)
+  F[y].add(x)
 
-current = []
-seen = set()
-def dfs(v):
-  current.append(v)
-  if len(current) == N:
-    print('Yes')
-    # print('current', *[x + 1 for x in current])
-    ans = [None] * N
-    for i in range(N - 1, -1, -1):
-      # print('i', i)
-      # print('current[i]', current[i])
-      ans[current[i]] = i + 1
-      # print(ans)
-    print(*ans)
+L = []
+initial_candidate = [y for y in range(N) if len(F.get(y, set())) == 0]
+S = deque(initial_candidate)
+
+while S:
+  if len(S) > 1:
+    print('No')
     exit()
 
-  for nex in G[v]:
-    if nex not in seen:
-      seen.add(nex)
-      dfs(nex)
-      current.pop()
+  n = S.popleft()
+  L.append(n)
 
+  for m in G[n]:
+    F[m].remove(n)
+    if not F.get(m):
+      S.append(m)
+  G[n] = {}
 
-ultraseen = set()
-for i in range(N):
-  if i in ultraseen:
-    continue
+has_edge = any([len(v) for v in G.values()])
+if has_edge:
+  print('No')
+  exit()
 
-  seen = set()
-  seen.add(i)
-  current = []
-
-  dfs(i)
-
-  ultraseen = ultraseen.union(seen)
-
-print('No')
+seeds = [i + 1 for i in L]
+anses = [None] * N
+for i, seed in enumerate(seeds):
+  anses[seed - 1] = i
+print('Yes')
+print(*[a + 1 for a in anses])
