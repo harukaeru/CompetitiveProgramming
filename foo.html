@@ -1,0 +1,92 @@
+<!-- CSS Code: Place this code in the document's head (between the <head> -- </head> tags) -->
+<style>
+table.customTable {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #366B90;
+  border-style: solid;
+  color: #000000;
+}
+
+table.customTable td, table.customTable th {
+  border-width: 2px;
+  border-color: #366B90;
+  border-style: solid;
+  padding: 5px;
+}
+
+table.customTable thead {
+  background-color: #366B90;
+}
+</style>
+
+<!-- HTML Code: Place this code in the document's body (between the <body> tags) where the table should appear -->
+<table class="customTable">
+  <tbody>
+    <tr>
+      <td>屋号</td>
+      <td>harukaeru-programming</td>
+    </tr>
+    <tr>
+      <td>創業</td>
+      <td>2023/04/14</td>
+    </tr>
+    <tr>
+      <td>所在地</td>
+      <td>神奈川県横浜市</td>
+    </tr>
+    <tr>
+      <td>事業用連絡先</td>
+      <td><span class="container" id="myDiv"><span class="content">contact アット harukaeru.net</span></span></td>
+      <style>
+        .container {
+          position: relative;
+          width: 100%;
+        }
+        .content {
+          position: relative;
+          width: max-content;
+          left: 0;
+          transition: left 0.15s ease-in-out;
+        }
+      </style>
+      <script>
+        const myDiv = document.getElementById('myDiv');
+        const content = myDiv.querySelector('.content');
+
+        const event1 = () => {
+            content.style.left = `${parseInt(content.style.left || 0) + 200}px`;
+            myDiv.removeEventListener('mouseover', event1);
+            setTimeout(() => {
+              myDiv.addEventListener('mouseover', event2)
+            }, 200);
+        }
+        const event2 = () => {
+console.log('event2??')
+            content.style.left = `0px`;
+            myDiv.removeEventListener('mouseover', event2);
+        }
+
+        myDiv.addEventListener('mouseover', event1);
+      </script>
+    </tr>
+    <tr>
+      <td>代表</td>
+      <td>中田 琢巳</td>
+    </tr>
+    <tr>
+      <td>事業内容</td>
+      <td>ソフトウェア開発</td>
+    </tr>
+    <tr>
+      <td>実績等</td>
+      <td><a href="https://github.com/harukaeru" target="_blank" rel="noopener noreferrer">https://github.com/harukaeru</a><br>
+<a href="https://scrapbox.io/harukaeru-public/harukaeru-public" target="_blank" rel="noopener noreferrer">https://scrapbox.io/harukaeru-public/harukaeru-public</a></td>
+    </tr>
+  </tbody>
+</table>
+<!-- Generated at CSSPortal.com -->
+
+
