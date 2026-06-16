@@ -18,4 +18,3 @@ for i in range(Q):
     i = x[1]
     pi = list(P[i - 1])
     pi.sort()
-    print(*pi)
